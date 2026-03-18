@@ -1,15 +1,14 @@
 :root {
   --bg: #f4f7fb;
-  --surface: rgba(255, 255, 255, 0.84);
+  --surface: rgba(255, 255, 255, 0.82);
   --surface-strong: #ffffff;
   --text: #153047;
-  --muted: #587188;
-  --primary: #0f9ab8;
-  --primary-dark: #0a6f8e;
-  --accent: #f6b73c;
-  --success: #20b168;
+  --muted: #5f7588;
+  --primary: #0d76b8;
+  --primary-dark: #0c3c7f;
+  --accent: #e3a327;
   --border: rgba(21, 48, 71, 0.08);
-  --shadow: 0 20px 60px rgba(16, 45, 68, 0.12);
+  --shadow: 0 24px 70px rgba(14, 34, 58, 0.14);
 }
 
 * {
@@ -23,28 +22,39 @@ html {
 body {
   margin: 0;
   font-family: 'Inter', sans-serif;
-  background: linear-gradient(180deg, #eef7fb 0%, #f9fbfd 100%);
   color: var(--text);
+  background:
+    radial-gradient(circle at top left, rgba(13, 118, 184, 0.12), transparent 28%),
+    linear-gradient(180deg, #eef6fb 0%, #f9fbfd 100%);
 }
 
-body::before {
-  content: '';
-  position: fixed;
-  inset: 0;
-  background: radial-gradient(circle at top right, rgba(15, 154, 184, 0.12), transparent 30%);
-  pointer-events: none;
+a {
+  color: inherit;
 }
 
 .container {
-  width: min(1120px, calc(100% - 2rem));
+  width: min(1160px, calc(100% - 2rem));
   margin: 0 auto;
 }
 
 .hero {
-  padding: 1.5rem 0 4rem;
+  position: relative;
+  overflow: hidden;
+  padding: 1.5rem 0 4.5rem;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 85% 15%, rgba(227, 163, 39, 0.16), transparent 18%),
+    radial-gradient(circle at 78% 22%, rgba(13, 118, 184, 0.18), transparent 20%);
+  pointer-events: none;
 }
 
 .nav {
+  position: relative;
+  z-index: 1;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -52,42 +62,68 @@ body::before {
   margin-bottom: 4rem;
 }
 
-.brand {
-  font-size: 1.35rem;
-  font-weight: 800;
-  letter-spacing: -0.03em;
+.brand-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.9rem;
+  text-decoration: none;
+}
+
+.brand-logo {
+  width: 64px;
+  height: 64px;
+  object-fit: contain;
+  filter: drop-shadow(0 14px 24px rgba(12, 60, 127, 0.18));
+}
+
+.brand strong {
+  display: block;
+  font-size: 1.5rem;
+  letter-spacing: 0.06em;
+  color: var(--primary-dark);
 }
 
 .brand span {
-  color: var(--primary);
+  display: block;
+  font-size: 0.8rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--accent);
 }
 
 .nav-links {
   display: flex;
-  gap: 1.5rem;
+  align-items: center;
+  gap: 1.35rem;
   flex-wrap: wrap;
 }
 
-.nav-links a,
-.footer a {
-  color: var(--text);
+.nav-links a {
   text-decoration: none;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.nav-cta {
+  white-space: nowrap;
 }
 
 .hero-content {
+  position: relative;
+  z-index: 1;
   display: grid;
-  grid-template-columns: 1.3fr 0.95fr;
+  grid-template-columns: minmax(0, 1.2fr) minmax(340px, 430px);
   gap: 2rem;
-  align-items: center;
+  align-items: start;
 }
 
 .eyebrow {
-  margin: 0 0 0.8rem;
+  margin: 0 0 0.9rem;
   color: var(--primary-dark);
-  font-size: 0.95rem;
-  font-weight: 700;
+  font-size: 0.9rem;
+  font-weight: 800;
   text-transform: uppercase;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.13em;
 }
 
 h1,
@@ -99,31 +135,42 @@ ul {
 }
 
 h1 {
-  font-size: clamp(2.6rem, 5vw, 4.8rem);
-  line-height: 1.05;
+  font-size: clamp(2.8rem, 5.8vw, 5.2rem);
+  line-height: 0.98;
+  letter-spacing: -0.06em;
+  margin-bottom: 1.15rem;
+  max-width: 12ch;
+}
+
+h2 {
+  font-size: clamp(2rem, 3.6vw, 3.2rem);
+  line-height: 1.08;
   letter-spacing: -0.05em;
   margin-bottom: 1rem;
 }
 
-h2 {
-  font-size: clamp(2rem, 3.5vw, 3rem);
-  letter-spacing: -0.04em;
-  margin-bottom: 1rem;
+h3 {
+  font-size: 1.4rem;
+  margin-bottom: 0.75rem;
 }
 
 .lead,
 .section-heading p,
 .benefit p,
-.info-card p,
+.stat-card p,
 .footer p,
 .tour-card p,
 .social-card p,
 .embed-note,
 .embed-card span,
-.field-hint {
+.field-hint,
+.booking-intro,
+.hero-highlights span,
+.hero-proof-bar span,
+.cta-banner p {
   color: var(--muted);
-  font-size: 1.05rem;
-  line-height: 1.7;
+  font-size: 1.03rem;
+  line-height: 1.75;
 }
 
 .hero-actions,
@@ -138,13 +185,13 @@ h2 {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 0.95rem 1.4rem;
+  padding: 0.95rem 1.45rem;
   border-radius: 999px;
-  font-weight: 700;
-  text-decoration: none;
   border: 1px solid transparent;
-  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+  font-weight: 800;
+  text-decoration: none;
   cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
 }
 
 .button:hover {
@@ -152,66 +199,118 @@ h2 {
 }
 
 .button.primary {
+  color: #fff;
   background: linear-gradient(135deg, var(--primary), var(--primary-dark));
-  color: white;
-  box-shadow: 0 16px 30px rgba(15, 154, 184, 0.22);
+  box-shadow: 0 18px 32px rgba(13, 118, 184, 0.26);
 }
 
 .button.secondary {
-  background: rgba(255, 255, 255, 0.75);
-  border-color: rgba(15, 154, 184, 0.15);
+  background: rgba(255, 255, 255, 0.72);
+  color: var(--primary-dark);
+  border-color: rgba(13, 118, 184, 0.14);
 }
 
 .button.full {
   width: 100%;
 }
 
-.hero-highlights {
+.hero-proof-bar,
+.hero-highlights,
+.stats-grid,
+.cards,
+.social-grid,
+.benefits {
   display: grid;
+  gap: 1rem;
+}
+
+.hero-proof-bar {
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 0.75rem;
-  padding: 0;
-  list-style: none;
+  margin: 2rem 0 1.2rem;
 }
 
-.hero-highlights li,
-.tour-card li {
-  color: var(--text);
-}
-
-.booking-card,
+.hero-proof-bar > div,
+.stat-card,
 .tour-card,
-.info-card,
-.benefit,
+.booking-card,
 .social-card,
 .embed-card,
-.gallery-tile {
-  backdrop-filter: blur(16px);
+.benefit,
+.cta-banner {
   background: var(--surface);
   border: 1px solid var(--border);
-  border-radius: 24px;
+  border-radius: 26px;
   box-shadow: var(--shadow);
+  backdrop-filter: blur(14px);
+}
+
+.hero-proof-bar > div {
+  padding: 1.2rem;
+}
+
+.hero-proof-bar strong,
+.stat-card strong,
+.hero-highlights strong,
+.benefit strong {
+  display: block;
+  margin-bottom: 0.35rem;
+  font-size: 1rem;
+}
+
+.hero-highlights {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  padding: 0;
+  list-style: none;
+  margin-bottom: 0;
+}
+
+.hero-highlights li {
+  padding: 1.2rem;
+  border-radius: 22px;
+  background: rgba(255, 255, 255, 0.6);
+  border: 1px solid rgba(13, 118, 184, 0.08);
 }
 
 .booking-card,
+.tour-card,
 .social-card,
 .embed-card,
-.tour-card,
-.info-card {
-  padding: 1.75rem;
+.stat-card,
+.benefit,
+.cta-banner {
+  padding: 1.8rem;
+}
+
+.booking-card-top,
+.embed-card-head,
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+.availability-pill,
+.card-tag,
+.tour-type {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.48rem 0.8rem;
+  border-radius: 999px;
+  font-size: 0.82rem;
+  font-weight: 800;
 }
 
 .card-tag,
-.tour-type,
-.tile-label {
-  display: inline-flex;
-  margin-bottom: 0.75rem;
-  background: rgba(15, 154, 184, 0.1);
+.tour-type {
+  margin-bottom: 0.8rem;
+  background: rgba(13, 118, 184, 0.1);
   color: var(--primary-dark);
-  padding: 0.45rem 0.8rem;
-  border-radius: 999px;
-  font-weight: 700;
-  font-size: 0.85rem;
+}
+
+.availability-pill {
+  background: rgba(227, 163, 39, 0.14);
+  color: #8a5a00;
 }
 
 .booking-form {
@@ -222,7 +321,6 @@ h2 {
 .booking-form label {
   display: grid;
   gap: 0.45rem;
-  color: var(--text);
   font-weight: 600;
 }
 
@@ -230,11 +328,11 @@ h2 {
 .booking-form select,
 .booking-form textarea {
   width: 100%;
-  border: 1px solid rgba(21, 48, 71, 0.12);
   border-radius: 14px;
+  border: 1px solid rgba(21, 48, 71, 0.12);
   padding: 0.95rem 1rem;
   font: inherit;
-  background: rgba(255, 255, 255, 0.95);
+  background: rgba(255, 255, 255, 0.96);
   resize: vertical;
 }
 
@@ -243,35 +341,45 @@ h2 {
   gap: 0.5rem;
   padding: 1rem;
   border-radius: 18px;
-  background: rgba(15, 154, 184, 0.06);
-  border: 1px dashed rgba(15, 154, 184, 0.2);
+  background: rgba(13, 118, 184, 0.06);
+  border: 1px dashed rgba(13, 118, 184, 0.22);
 }
 
 .conditional-field.is-visible {
   display: grid;
 }
 
-.field-hint {
+.booking-note,
+.embed-note {
   margin: 0;
   font-size: 0.95rem;
-}
-
-.booking-note {
-  margin: 0;
-  color: var(--muted);
-  font-size: 0.95rem;
-  line-height: 1.6;
 }
 
 .booking-note a,
-.info-card a,
 .footer p a {
   color: var(--primary-dark);
-  font-weight: 700;
+  font-weight: 800;
 }
 
 .section {
   padding: 4.5rem 0;
+}
+
+.stats-section {
+  padding-top: 0;
+}
+
+.stats-grid,
+.social-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.cards {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.review-showcase {
+  grid-template-columns: 1.1fr 0.9fr;
 }
 
 .section-heading {
@@ -280,39 +388,21 @@ h2 {
 }
 
 .section-heading.narrow {
-  max-width: 640px;
-}
-
-.cards,
-.info-grid,
-.social-grid {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 1.5rem;
-}
-
-.cards {
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  max-width: 680px;
 }
 
 .tour-card.featured {
-  background: linear-gradient(180deg, rgba(15, 154, 184, 0.14), rgba(255, 255, 255, 0.92));
+  background: linear-gradient(180deg, rgba(13, 118, 184, 0.14), rgba(255, 255, 255, 0.94));
 }
 
 .tour-card ul {
   padding-left: 1.1rem;
-  line-height: 1.8;
+  line-height: 1.85;
+  margin-bottom: 0;
 }
 
 .accent-section {
-  background: linear-gradient(135deg, #0d3850, #114d6a);
-  color: white;
-}
-
-.accent-section .eyebrow,
-.accent-section p,
-.accent-section h2,
-.accent-section strong {
+  background: linear-gradient(135deg, #0c3c7f, #0f5a9e 55%, #1674bb);
   color: white;
 }
 
@@ -323,124 +413,42 @@ h2 {
   align-items: start;
 }
 
-.benefits {
-  display: grid;
-  gap: 1rem;
+.accent-section .eyebrow,
+.accent-section h2,
+.accent-section p,
+.accent-section strong {
+  color: white;
 }
 
 .benefit {
-  padding: 1.4rem;
   background: rgba(255, 255, 255, 0.12);
   border-color: rgba(255, 255, 255, 0.1);
 }
 
-.instagram-layout {
-  align-items: stretch;
-}
-
 .instagram-card {
-  background: linear-gradient(180deg, rgba(230, 76, 125, 0.08), rgba(255, 255, 255, 0.92));
+  background: linear-gradient(180deg, rgba(225, 85, 128, 0.08), rgba(255, 255, 255, 0.94));
 }
 
-.spotlight-card {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+.trip-widget-card {
+  background: linear-gradient(180deg, rgba(24, 117, 184, 0.08), rgba(255, 255, 255, 0.94));
 }
 
-.instagram-gallery {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 1rem;
+.compact-actions {
+  margin-bottom: 0;
 }
 
-.gallery-tile {
-  min-height: 190px;
-  padding: 1.25rem;
-  text-decoration: none;
-  color: var(--text);
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  position: relative;
-  overflow: hidden;
-}
-
-.gallery-tile::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  opacity: 0.9;
-  z-index: 0;
-}
-
-.gallery-tile > * {
-  position: relative;
-  z-index: 1;
-}
-
-.tile-large::before {
-  background: linear-gradient(145deg, rgba(8, 44, 73, 0.75), rgba(15, 154, 184, 0.28));
-}
-
-.tile-gradient::before {
-  background: linear-gradient(145deg, rgba(235, 72, 125, 0.8), rgba(246, 183, 60, 0.35));
-}
-
-.tile-soft::before {
-  background: linear-gradient(145deg, rgba(255, 255, 255, 0.78), rgba(15, 154, 184, 0.12));
-}
-
-.tile-dark::before {
-  background: linear-gradient(145deg, rgba(17, 39, 58, 0.88), rgba(62, 91, 115, 0.4));
-}
-
-.gallery-tile strong {
-  font-size: 1.2rem;
-  line-height: 1.4;
-}
-
-.trip-card {
-  background: linear-gradient(180deg, rgba(52, 186, 129, 0.08), rgba(255, 255, 255, 0.92));
-}
-
-.embed-card-head {
+.cta-banner {
   display: flex;
   justify-content: space-between;
-  align-items: flex-start;
-  gap: 1rem;
-  margin-bottom: 1rem;
+  align-items: center;
+  gap: 2rem;
+  background: linear-gradient(135deg, rgba(12, 60, 127, 0.96), rgba(13, 118, 184, 0.88));
 }
 
-.embed-card-head span {
-  font-size: 0.95rem;
-}
-
-.tripadvisor-widget-shell {
-  min-height: 420px;
-  border-radius: 20px;
-  overflow: hidden;
-  border: 1px solid rgba(21, 48, 71, 0.08);
-  background: linear-gradient(180deg, #f9fcfe, #eef4f8);
-  padding: 1rem;
-}
-
-.tripadvisor-widget-shell .TA_selfserveprop,
-.tripadvisor-widget-shell .TA_links,
-.tripadvisor-widget-shell li {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-.tripadvisor-widget-shell a {
-  color: var(--primary-dark);
-  font-weight: 700;
-}
-
-.embed-note {
-  margin: 1rem 0 0;
-  font-size: 0.95rem;
+.cta-banner .eyebrow,
+.cta-banner h2,
+.cta-banner p {
+  color: white;
 }
 
 .footer {
@@ -448,51 +456,96 @@ h2 {
 }
 
 .footer-content {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 1rem;
   padding-top: 1rem;
   border-top: 1px solid rgba(21, 48, 71, 0.08);
 }
 
-@media (max-width: 900px) {
+.footer-brand {
+  max-width: 620px;
+}
+
+@media (max-width: 1080px) {
+  .nav {
+    flex-wrap: wrap;
+  }
+
   .hero-content,
-  .cards,
+  .review-showcase,
   .split-grid,
-  .info-grid,
+  .cta-banner,
+  .stats-grid,
+  .cards,
+  .hero-proof-bar,
   .hero-highlights,
-  .social-grid,
-  .instagram-gallery {
+  .social-grid {
     grid-template-columns: 1fr;
   }
 
-  .nav,
-  .footer-content,
-  .embed-card-head {
+  .cta-banner,
+  .footer-content {
     flex-direction: column;
     align-items: flex-start;
   }
 }
 
-@media (max-width: 640px) {
-  .nav-links {
-    gap: 0.8rem 1rem;
+@media (max-width: 860px) {
+  .hero-content {
+    grid-template-columns: 1fr;
   }
 
-  h1 {
-    font-size: 2.5rem;
+  .nav-links {
+    order: 3;
+  }
+}
+
+@media (max-width: 640px) {
+  .hero {
+    padding-bottom: 3.5rem;
   }
 
   .section {
     padding: 3.5rem 0;
   }
 
+  .brand-logo {
+    width: 54px;
+    height: 54px;
+  }
+
+  .brand strong {
+    font-size: 1.2rem;
+  }
+
+  .brand span {
+    font-size: 0.68rem;
+    letter-spacing: 0.15em;
+  }
+
+  h1 {
+    font-size: 2.55rem;
+  }
+
+  .button,
+  .nav-cta {
+    width: 100%;
+  }
+
+  .nav,
+  .nav-links,
+  .booking-card-top,
+  .embed-card-head,
+  .footer-content {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
   .booking-card,
+  .tour-card,
   .social-card,
   .embed-card,
-  .tour-card,
-  .info-card {
-    padding: 1.25rem;
+  .stat-card,
+  .benefit,
+  .cta-banner {
+    padding: 1.3rem;
   }
 }
