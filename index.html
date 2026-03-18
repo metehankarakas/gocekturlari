@@ -17,500 +17,475 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <div class="topbar">
-      <div class="container topbar-content">
-        <div class="topbar-badges">
-          <span>Göcek Marina çıkışlı günlük turlar</span>
-          <span>Sezona özel hızlı rezervasyon desteği</span>
-        </div>
-        <div class="topbar-links">
-          <a href="tel:05304053501">Telefon</a>
-          <a href="https://wa.me/905304053501" target="_blank" rel="noopener noreferrer">WhatsApp</a>
-          <a href="https://www.instagram.com/gocekgrandazure/" target="_blank" rel="noopener noreferrer">Instagram</a>
+    <div class="page-shell">
+      <div class="topbar">
+        <div class="container topbar-content">
+          <div class="topbar-badges">
+            <span>Göcek Marina çıkışlı premium günlük turlar</span>
+            <span>Hızlı teklif, net program, güçlü misafir deneyimi</span>
+          </div>
+          <div class="topbar-links">
+            <a href="tel:05304053501">0530 405 35 01</a>
+            <a href="https://wa.me/905304053501" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+            <a href="https://www.instagram.com/gocekgrandazure/" target="_blank" rel="noopener noreferrer">Instagram</a>
+          </div>
         </div>
       </div>
-    </div>
 
-    <header class="hero">
-      <div class="hero-overlay"></div>
-      <nav class="nav container">
-        <a class="brand brand-link" href="#top" aria-label="Grand Azure ana sayfa">
-          <img src="assets/grand-azure-logo.svg" alt="Grand Azure logosu" class="brand-logo" />
-          <div>
-            <strong>GRAND AZURE</strong>
-            <span>Göcek Boat Experience</span>
-          </div>
-        </a>
-        <div class="nav-links">
-          <a href="#turlar">Turlar</a>
-          <a href="#rota">Rota</a>
-          <a href="#neden-biz">Neden Biz</a>
-          <a href="#sss">SSS</a>
-          <a href="#rezervasyon">Rezervasyon</a>
-        </div>
-        <a class="button nav-cta" href="#rezervasyon">Hemen Teklif Al</a>
-      </nav>
-
-      <div class="hero-content container" id="top">
-        <div class="hero-copy">
-          <p class="eyebrow">Göcek koylarında güven, konfor ve şık bir deniz günü</p>
-          <h1>Göcek tekne turunu planlamayı kolaylaştıran daha güçlü bir vitrin.</h1>
-          <p class="lead">
-            Grand Azure; Göcek'te günübirlik tekne turu, özel kiralama ve kutlama organizasyonu
-            arayan misafirler için sade ama ikna edici bir deneyim sunar. Referans aldığımız güçlü
-            denizcilik sitelerindeki kurumsal yapıdan ilhamla; iletişim kanallarını görünür,
-            paketleri anlaşılır ve yazıları daha profesyonel hale getirdik.
-          </p>
-
-          <div class="hero-actions">
-            <a class="button primary" href="#rezervasyon">WhatsApp'tan Fiyat Sor</a>
-            <a class="button secondary" href="#turlar">Tur Paketlerini İncele</a>
-          </div>
-
-          <div class="hero-proof-bar">
-            <div>
-              <strong>Hızlı dönüş</strong>
-              <span>Talebinizi doğrudan WhatsApp'a aktarıp anında görüşme başlatın.</span>
-            </div>
-            <div>
-              <strong>Net paket yapısı</strong>
-              <span>Hangi turun size uygun olduğunu birkaç saniyede anlayın.</span>
-            </div>
-            <div>
-              <strong>Güven veren anlatım</strong>
-              <span>Rota, hizmet akışı ve sık sorulan sorular tek sayfada açıkça sunulur.</span>
-            </div>
-          </div>
-
-          <ul class="hero-highlights">
-            <li>
-              <strong>Göcek'in sevilen koyları</strong>
-              <span>Yüzme molaları, berrak su ve gün boyu keyifli deniz planı.</span>
-            </li>
-            <li>
-              <strong>Butik özel organizasyonlar</strong>
-              <span>Doğum günü, evlilik teklifi, gün batımı ve küçük grup kutlamaları.</span>
-            </li>
-            <li>
-              <strong>Operasyon bilgisi net</strong>
-              <span>Kalkış, süre, yemek ve hazırlık detaylarını önceden öğrenin.</span>
-            </li>
-          </ul>
-        </div>
-
-        <aside class="booking-card" id="rezervasyon">
-          <div class="booking-card-top">
-            <p class="card-tag">Anında Teklif Talebi</p>
-            <span class="availability-pill">2026 sezonu açık</span>
-          </div>
-          <h2>Rezervasyon konuşmasını başlatan kısa ve net form</h2>
-          <p class="booking-intro">
-            Ad, tarih, kişi sayısı ve tur tipini iletin; sistem bilgileri WhatsApp mesajına otomatik
-            taşısın. Böylece misafir ilk mesajı yazmakla uğraşmadan hızlıca teklif alabilsin.
-          </p>
-          <form class="booking-form" id="booking-form">
-            <label>
-              Ad Soyad
-              <input type="text" id="name" placeholder="Adınız Soyadınız" required />
-            </label>
-            <label>
-              Telefon
-              <input type="tel" id="phone" placeholder="05xx xxx xx xx" required />
-            </label>
-            <label>
-              Tur Tipi
-              <select id="tourType">
-                <option>Günübirlik Tekne Turu</option>
-                <option>Özel Günübirlik Tur</option>
-                <option>Gün Batımı / Kutlama Turu</option>
-                <option>Özel Tekne Kiralama</option>
-              </select>
-            </label>
-            <div class="conditional-field" id="mealField">
-              <label>
-                Öğle Yemeği Ana Yemek Seçimi
-                <select id="mealChoice">
-                  <option value="">Ana yemek seçin</option>
-                  <option>Tavuk</option>
-                  <option>Balık</option>
-                  <option>Köfte</option>
-                </select>
-              </label>
-              <p class="field-hint">
-                Günübirlik turlarda servis akışını hızlandırmak için ana yemek tercihini önceden
-                iletebilirsiniz.
-              </p>
-            </div>
-            <label>
-              Tarih
-              <input type="date" id="date" required />
-            </label>
-            <label>
-              Kişi Sayısı
-              <input type="number" id="guests" min="1" placeholder="Örn. 4" required />
-            </label>
-            <label>
-              Ek Not
-              <textarea
-                id="message"
-                rows="4"
-                placeholder="Kutlama planı, çocuk sayısı, rota isteği veya özel notunuz"
-              ></textarea>
-            </label>
-            <button type="submit" class="button primary full">WhatsApp'ta Talep Oluştur</button>
-            <p class="booking-note">
-              Hızlı iletişim için
-              <a href="https://wa.me/905304053501" target="_blank" rel="noopener noreferrer"
-                >0530 405 35 01</a
-              >
-              üzerinden doğrudan mesaj da gönderebilirsiniz.
-            </p>
-          </form>
-        </aside>
-      </div>
-    </header>
-
-    <main>
-      <section class="section stats-section">
-        <div class="container stats-grid">
-          <article class="stat-card">
-            <strong>Kurumsal görünüm</strong>
-            <p>Üst iletişim bandı, güçlü başlıklar ve bölümlenmiş içerik ile daha güvenilir ilk izlenim.</p>
-          </article>
-          <article class="stat-card">
-            <strong>Daha iyi içerik akışı</strong>
-            <p>Turlar, rota planı, hizmet farkları ve SSS alanları tek sayfada doğru sırayla ilerler.</p>
-          </article>
-          <article class="stat-card">
-            <strong>Yüksek dönüşüm potansiyeli</strong>
-            <p>Sayfa boyunca tekrar eden CTA'lar sayesinde kullanıcı rezervasyon adımına daha kolay ulaşır.</p>
-          </article>
-        </div>
-      </section>
-
-      <section class="section container intro-section">
-        <div class="section-heading narrow">
-          <p class="eyebrow">Grand Azure deneyimi</p>
-          <h2>Göcek'te tekne turu arayan misafirin aklındaki temel sorulara doğrudan cevap verin</h2>
-          <p>
-            Referans aldığınız denizcilik sitelerinde olduğu gibi, ziyaretçi önce sizi tanımak,
-            sonra hizmeti ve rotayı görmek ister. Bu nedenle sayfaya daha kurumsal bir giriş,
-            operasyon detayları ve karar kolaylaştıran açıklamalar ekledik.
-          </p>
-        </div>
-
-        <div class="intro-grid">
-          <article class="info-card">
-            <p class="card-tag">Kimler İçin Uygun?</p>
-            <h3>Aileler, çiftler, arkadaş grupları ve butik etkinlikler</h3>
-            <p>
-              İster sakin bir yüzme günü, ister kutlama odaklı özel tur planlayın; Grand Azure farklı
-              beklentilere göre esneyebilen bir hizmet dili sunar.
-            </p>
-          </article>
-          <article class="info-card">
-            <p class="card-tag">Kalkış Noktası</p>
-            <h3>Göcek Marina'dan kolay buluşma ve düzenli akış</h3>
-            <p>
-              Misafirin buluşma sürecini zorlaştırmayan, net konum paylaşımlı ve ön bilgilendirmeli
-              bir operasyon yapısı vurgulanır.
-            </p>
-          </article>
-          <article class="info-card">
-            <p class="card-tag">Hizmet Yaklaşımı</p>
-            <h3>Samimi iletişim, temiz sunum ve planlı deneyim</h3>
-            <p>
-              Yalnızca tekne turu değil; ön bilgilendirme, yemek akışı ve rota yönetimiyle daha
-              profesyonel bir misafir deneyimi hedeflenir.
-            </p>
-          </article>
-        </div>
-      </section>
-
-      <section class="section container" id="turlar">
-        <div class="section-heading">
-          <p class="eyebrow">Tur seçenekleri</p>
-          <h2>Karar vermeyi hızlandıran net ve profesyonel paket anlatımı</h2>
-          <p>
-            Her paket; kimlere hitap ettiği, hangi deneyimi sunduğu ve neden tercih edildiği açıkça
-            yazılarak daha anlaşılır hale getirildi.
-          </p>
-        </div>
-
-        <div class="cards">
-          <article class="tour-card featured">
-            <p class="tour-type">En çok tercih edilen</p>
-            <h3>Günübirlik Tekne Turu</h3>
-            <p>
-              Göcek'in popüler koylarında yüzme molaları ve uzun deniz keyfi isteyen misafirler için
-              dengeli, sosyal ve rahat bir tam gün deneyimi.
-            </p>
-            <ul>
-              <li>Sabah çıkış, gün boyu yüzme ve dinlenme molaları</li>
-              <li>Çiftler, aileler ve küçük arkadaş grupları için ideal plan</li>
-              <li>Öğle yemeği seçimini önceden iletme kolaylığı</li>
-            </ul>
-          </article>
-
-          <article class="tour-card">
-            <p class="tour-type">Daha kişisel deneyim</p>
-            <h3>Özel Günübirlik Tur</h3>
-            <p>
-              Tekneyi yalnızca kendi grubunuzla kullanmak, rotayı esnetmek ve gününüzü daha özel bir
-              atmosferde geçirmek istiyorsanız güçlü bir alternatif.
-            </p>
-            <ul>
-              <li>Kişiye özel rota ve mola planı</li>
-              <li>Doğum günü, yıldönümü ve özel kutlamalar için uygun</li>
-              <li>Daha sakin, daha mahrem ve daha premium deneyim</li>
-            </ul>
-          </article>
-
-          <article class="tour-card">
-            <p class="tour-type">Butik ve etkileyici</p>
-            <h3>Gün Batımı &amp; Özel Kiralama</h3>
-            <p>
-              Daha kısa süreli ama duygusu yüksek bir deniz programı arayan misafirler için romantik,
-              fotoğraf odaklı ve şık bir alternatif sunar.
-            </p>
-            <ul>
-              <li>Gün batımı manzarası eşliğinde özel planlama</li>
-              <li>Evlilik teklifi ve mini kutlamalar için ideal</li>
-              <li>İçecek, süsleme veya özel isteklerle zenginleştirilebilir</li>
-            </ul>
-          </article>
-        </div>
-      </section>
-
-      <section class="section route-section" id="rota">
-        <div class="container split-grid route-grid">
-          <div>
-            <p class="eyebrow">Rota ve gün planı</p>
-            <h2>Misafirin tur öncesi görmek istediği akışı açık ve güven verici biçimde sunun</h2>
-            <p>
-              Güçlü tur sitelerindeki gibi, rotayı sadece isim olarak değil deneyim akışı olarak da
-              anlatmak ziyaretçinin kararını kolaylaştırır. Bu bölüm, tur gününün nasıl geçeceğini
-              sade bir zaman çizelgesiyle özetler.
-            </p>
-          </div>
-
-          <div class="timeline-card">
-            <div class="timeline-item">
-              <span>01</span>
-              <div>
-                <strong>Marinada buluşma</strong>
-                <p>Konum paylaşımı ve kısa karşılama sonrası tekneye rahat geçiş yapılır.</p>
-              </div>
-            </div>
-            <div class="timeline-item">
-              <span>02</span>
-              <div>
-                <strong>İlk koy molası</strong>
-                <p>Serin su, kısa bilgilendirme ve sakin başlangıç ile güne yumuşak giriş yapılır.</p>
-              </div>
-            </div>
-            <div class="timeline-item">
-              <span>03</span>
-              <div>
-                <strong>Öğle yemeği &amp; dinlenme</strong>
-                <p>Seçilen menü servis edilir, misafirler yüzme ve dinlenme arasında tercih yapar.</p>
-              </div>
-            </div>
-            <div class="timeline-item">
-              <span>04</span>
-              <div>
-                <strong>Ek koylar ve dönüş</strong>
-                <p>Günün temposuna göre ek duraklar değerlendirilir ve marina dönüşü tamamlanır.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section class="section accent-section" id="neden-biz">
-        <div class="container split-grid">
-          <div>
-            <p class="eyebrow">Neden Grand Azure?</p>
-            <h2>Profesyonel sunum, net bilgi ve kolay iletişim bir araya geldiğinde güven artar</h2>
-            <p>
-              Bu yapı yalnızca güzel görünmek için değil, ziyaretçinin kararsız kaldığı alanları
-              kapatmak için tasarlandı. Turu tanıtıyor, hizmet standardını anlatıyor ve doğru anda
-              rezervasyon çağrısı yapıyor.
-            </p>
-          </div>
-          <div class="benefits">
-            <div class="benefit">
-              <strong>Daha güçlü ilk ekran</strong>
-              <p>Kurumsal üst bant, odaklı başlık ve güven cümleleriyle premium algı desteklenir.</p>
-            </div>
-            <div class="benefit">
-              <strong>Hizmet standardı anlatımı</strong>
-              <p>Misafir ne beklemesi gerektiğini görür; bu da soru işaretlerini ve mesaj trafiğini azaltır.</p>
-            </div>
-            <div class="benefit">
-              <strong>Karar kolaylaştıran rota bölümü</strong>
-              <p>Turun nasıl ilerlediğini görmek, özellikle ilk kez rezervasyon yapacak kişiler için önemlidir.</p>
-            </div>
-            <div class="benefit">
-              <strong>WhatsApp odaklı kapanış</strong>
-              <p>Sayfanın her önemli noktasında iletişime geçmeyi kolaylaştıran net butonlar bulunur.</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section class="section container service-section">
-        <div class="section-heading">
-          <p class="eyebrow">Hizmet farkları</p>
-          <h2>Misafirin satın alma kararını destekleyen operasyon detayları</h2>
-        </div>
-        <div class="service-grid">
-          <article class="service-card">
-            <strong>Rezervasyon öncesi bilgilendirme</strong>
-            <p>Tarih, kişi sayısı, tur tipi ve özel notlara göre hızlı geri dönüş sağlanır.</p>
-          </article>
-          <article class="service-card">
-            <strong>Temiz ve düzenli sunum</strong>
-            <p>Tekneye gelişten öğle yemeğine kadar deneyimin her adımı daha planlı aktarılır.</p>
-          </article>
-          <article class="service-card">
-            <strong>Esnek özel talepler</strong>
-            <p>Süsleme, kutlama, rota önceliği ve gün batımı gibi talepler önceden değerlendirilebilir.</p>
-          </article>
-          <article class="service-card">
-            <strong>Kolay iletişim kanalları</strong>
-            <p>Telefon, WhatsApp ve Instagram bağlantıları üst alandan itibaren görünür tutulur.</p>
-          </article>
-        </div>
-      </section>
-
-      <section class="section container" id="yorumlar">
-        <div class="section-heading narrow">
-          <p class="eyebrow">Sosyal kanıt</p>
-          <h2>Atmosferi ve kullanıcı güvenini birlikte gösteren alanlar</h2>
-          <p>
-            Misafir adayları genellikle önce teknenin atmosferini görmek, ardından yorumları
-            incelemek ister. Bu yüzden Instagram ve Tripadvisor yönlendirmeleri daha görünür hale
-            getirildi.
-          </p>
-        </div>
-
-        <div class="social-grid review-showcase">
-          <article class="social-card instagram-card spotlight-card">
-            <div>
-              <p class="card-tag">Instagram Vitrini</p>
-              <h3>@gocekgrandazure</h3>
-              <p>
-                Teknenin atmosferini, servis detaylarını ve Göcek koylarının ruhunu en hızlı anlatan
-                kanal. Reels içerikleri özellikle ilk kez gelecek misafir için güçlü ön izleme sağlar.
-              </p>
-            </div>
-            <div class="social-actions">
-              <a
-                class="button primary"
-                href="https://www.instagram.com/gocekgrandazure/"
-                target="_blank"
-                rel="noopener noreferrer"
-                >Instagram Profilini Aç</a
-              >
-              <a
-                class="button secondary"
-                href="https://www.instagram.com/gocekgrandazure/reels/"
-                target="_blank"
-                rel="noopener noreferrer"
-                >Reels Videoları</a
-              >
-            </div>
-          </article>
-
-          <article class="embed-card trip-widget-card">
-            <div class="embed-card-head">
-              <div>
-                <p class="card-tag">Tripadvisor Güveni</p>
-                <h3>Resmi yorum sayfasına yönlendirme</h3>
-              </div>
-              <span>Karar aşamasındaki ziyaretçiye güçlü referans</span>
-            </div>
-            <p class="embed-note">
-              Üçüncü taraf yorum sayfası, özellikle ilk kez rezervasyon yapacak kullanıcılar için
-              güven eşiğini düşürür ve iletişime geçme ihtimalini artırır.
-            </p>
-            <div class="social-actions compact-actions">
-              <a
-                class="button primary"
-                href="https://www.tripadvisor.com.tr/Attraction_Review-g298032-d26499348-Reviews-Gocek_Grand_Azure_Gunluk_Tur_Teknesi-Gocek_Mugla_Province_Turkish_Aegean_Coast.html"
-                target="_blank"
-                rel="noopener noreferrer"
-                >Tripadvisor Sayfasını Aç</a
-              >
-            </div>
-          </article>
-        </div>
-      </section>
-
-      <section class="section container faq-section" id="sss">
-        <div class="section-heading narrow">
-          <p class="eyebrow">Sık Sorulan Sorular</p>
-          <h2>Rezervasyon öncesi en sık gelen sorulara kısa yanıtlar</h2>
-        </div>
-        <div class="faq-list">
-          <article class="faq-item">
-            <h3>Tur süresi ne kadar?</h3>
-            <p>Seçilen pakete göre değişmekle birlikte günübirlik programlar sabah başlayıp gün içinde tamamlanır; özel turlarda süre planı birlikte netleştirilir.</p>
-          </article>
-          <article class="faq-item">
-            <h3>Çocuklu aileler için uygun mu?</h3>
-            <p>Evet. Özellikle sakin koy molaları ve planlı akış sayesinde aileler için konforlu bir deneyim hedeflenir.</p>
-          </article>
-          <article class="faq-item">
-            <h3>Özel organizasyon yapılabiliyor mu?</h3>
-            <p>Doğum günü, yıldönümü, evlilik teklifi veya butik kutlamalar için talebinize göre ek planlama yapılabilir.</p>
-          </article>
-          <article class="faq-item">
-            <h3>Rezervasyon nasıl kesinleşiyor?</h3>
-            <p>Form ya da WhatsApp üzerinden ön bilgileri paylaştıktan sonra uygunluk ve detay teyidi ile rezervasyon süreci netleştirilir.</p>
-          </article>
-        </div>
-      </section>
-
-      <section class="section container cta-banner-section">
-        <div class="cta-banner">
-          <div>
-            <p class="eyebrow">Rezervasyon zamanı</p>
-            <h2>Göcek'te denize açılacağınız günü birlikte planlayalım</h2>
-            <p>
-              Tarih, kişi sayısı ve tur tipini paylaşın; Grand Azure ekibi size en uygun seçenekleri
-              hızlıca WhatsApp üzerinden iletsin.
-            </p>
-          </div>
-          <div class="hero-actions">
-            <a class="button primary" href="#rezervasyon">Hemen Rezervasyon Talebi Oluştur</a>
-            <a class="button secondary" href="https://wa.me/905304053501" target="_blank" rel="noopener noreferrer">Direkt WhatsApp Aç</a>
-          </div>
-        </div>
-      </section>
-    </main>
-
-    <footer class="footer">
-      <div class="container footer-content">
-        <div class="footer-brand">
-          <a class="brand brand-link" href="#top">
+      <header class="hero" id="top">
+        <div class="hero-media"></div>
+        <div class="hero-overlay"></div>
+        <nav class="nav container glass-panel">
+          <a class="brand brand-link" href="#top" aria-label="Grand Azure ana sayfa">
             <img src="assets/grand-azure-logo.svg" alt="Grand Azure logosu" class="brand-logo" />
             <div>
               <strong>GRAND AZURE</strong>
               <span>Göcek Boat Experience</span>
             </div>
           </a>
-          <p>
-            Rezervasyon ve hızlı teklif için <a href="tel:05304053501">0530 405 35 01</a> veya
-            <a href="https://wa.me/905304053501" target="_blank" rel="noopener noreferrer">WhatsApp</a>
-            üzerinden bizimle iletişime geçin. Göcek Marina çıkışlı günübirlik ve özel tur
-            planlamalarında hızlı dönüş sağlanır.
-          </p>
+          <div class="nav-links">
+            <a href="#turlar">Turlar</a>
+            <a href="#rota">Rota</a>
+            <a href="#deneyim">Deneyim</a>
+            <a href="#sss">SSS</a>
+            <a href="#rezervasyon">Rezervasyon</a>
+          </div>
+          <a class="button nav-cta" href="#rezervasyon">Teklif Al</a>
+        </nav>
+
+        <div class="hero-content container">
+          <div class="hero-copy">
+            <p class="eyebrow light">Premium Göcek deniz deneyimi</p>
+            <h1>Göcek tekne turu için daha profesyonel, daha güçlü ve daha ikna edici bir vitrin.</h1>
+            <p class="lead hero-lead">
+              Grand Azure için sayfayı daha gelişmiş bir satış ve güven deneyimine dönüştürdük.
+              İlk ekranda güçlü bir görsel atmosfer, net hizmet anlatımı, karar kolaylaştıran içerik
+              blokları ve yüksek dönüşüm odaklı rezervasyon akışı birlikte çalışıyor.
+            </p>
+
+            <div class="hero-actions">
+              <a class="button primary" href="#rezervasyon">WhatsApp'tan Fiyat Sor</a>
+              <a class="button secondary light" href="#turlar">Tur Paketlerini İncele</a>
+            </div>
+
+            <div class="hero-metrics glass-panel">
+              <div>
+                <strong>Premium Sunum</strong>
+                <span>Güçlü ilk izlenim oluşturan modern ve katmanlı arayüz.</span>
+              </div>
+              <div>
+                <strong>Net İletişim</strong>
+                <span>Telefon, WhatsApp ve sosyal kanıt alanları görünür biçimde konumlandı.</span>
+              </div>
+              <div>
+                <strong>Kolay Rezervasyon</strong>
+                <span>Tur tipi, tarih ve kişi sayısı ile tek adımda teklif akışı başlatılır.</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="hero-side-stack">
+            <aside class="booking-card glass-strong" id="rezervasyon">
+              <div class="booking-card-top">
+                <p class="card-tag">Anında Teklif Talebi</p>
+                <span class="availability-pill">2026 sezonu açık</span>
+              </div>
+              <h2>WhatsApp'a hazır, profesyonel rezervasyon akışı</h2>
+              <p class="booking-intro">
+                Ziyaretçi temel bilgileri girsin; talep düzenli bir mesaj olarak otomatik oluşsun.
+                Bu yapı hem güven verir hem de iletişimi hızlandırır.
+              </p>
+              <form class="booking-form" id="booking-form">
+                <label>
+                  Ad Soyad
+                  <input type="text" id="name" placeholder="Adınız Soyadınız" required />
+                </label>
+                <label>
+                  Telefon
+                  <input type="tel" id="phone" placeholder="05xx xxx xx xx" required />
+                </label>
+                <label>
+                  Tur Tipi
+                  <select id="tourType">
+                    <option>Günübirlik Tekne Turu</option>
+                    <option>Özel Günübirlik Tur</option>
+                    <option>Gün Batımı / Kutlama Turu</option>
+                    <option>Özel Tekne Kiralama</option>
+                  </select>
+                </label>
+                <div class="conditional-field" id="mealField">
+                  <label>
+                    Öğle Yemeği Ana Yemek Seçimi
+                    <select id="mealChoice">
+                      <option value="">Ana yemek seçin</option>
+                      <option>Tavuk</option>
+                      <option>Balık</option>
+                      <option>Köfte</option>
+                    </select>
+                  </label>
+                  <p class="field-hint">
+                    Günübirlik turlarda servis akışını hızlandırmak için ana yemek tercihi önceden alınabilir.
+                  </p>
+                </div>
+                <label>
+                  Tarih
+                  <input type="date" id="date" required />
+                </label>
+                <label>
+                  Kişi Sayısı
+                  <input type="number" id="guests" min="1" placeholder="Örn. 4" required />
+                </label>
+                <label>
+                  Ek Not
+                  <textarea
+                    id="message"
+                    rows="4"
+                    placeholder="Kutlama planı, çocuk sayısı, rota isteği veya özel notunuz"
+                  ></textarea>
+                </label>
+                <button type="submit" class="button primary full">WhatsApp'ta Talep Oluştur</button>
+                <p class="booking-note">
+                  Doğrudan iletişim için
+                  <a href="https://wa.me/905304053501" target="_blank" rel="noopener noreferrer">0530 405 35 01</a>
+                  üzerinden hemen mesaj gönderebilirsiniz.
+                </p>
+              </form>
+            </aside>
+
+            <div class="floating-insight glass-panel">
+              <p class="card-tag">Misafir Kararını Hızlandırır</p>
+              <div class="insight-list">
+                <div>
+                  <strong>Görsel kalite</strong>
+                  <span>Daha güçlü arka plan atmosferi ve premium renk sistemi.</span>
+                </div>
+                <div>
+                  <strong>İçerik mimarisi</strong>
+                  <span>Rota, paketler ve güven unsurları doğru sırada kurgulandı.</span>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-        <a class="button secondary" href="#rezervasyon">Rezervasyon Oluştur</a>
-      </div>
-    </footer>
+      </header>
+
+      <main>
+        <section class="section stats-section">
+          <div class="container stats-grid elevated-grid">
+            <article class="stat-card">
+              <strong>Daha premium görünüm</strong>
+              <p>Katmanlı yüzeyler, cam efektli paneller ve daha sinematik bir kahraman alanı oluşturuldu.</p>
+            </article>
+            <article class="stat-card">
+              <strong>Daha gelişmiş içerik akışı</strong>
+              <p>Ziyaretçinin karar verme sırası düşünülerek hizmetler, rota ve güven içerikleri yeniden konumlandı.</p>
+            </article>
+            <article class="stat-card">
+              <strong>Daha yüksek dönüşüm odağı</strong>
+              <p>CTA tekrarları, süreç kartları ve hızlı teklif alanı rezervasyon niyetini destekliyor.</p>
+            </article>
+          </div>
+        </section>
+
+        <section class="section container intro-section" id="deneyim">
+          <div class="section-heading narrow">
+            <p class="eyebrow">Grand Azure deneyimi</p>
+            <h2>Tekne turu satın alma kararını destekleyen daha kurumsal ve güven veren yapı</h2>
+            <p>
+              Ziyaretçi önce atmosferi hisseder, sonra hizmeti anlar, ardından güven duyar ve en son
+              rezervasyona geçer. Yeni sayfa kurgusu tam olarak bu psikolojik akışa göre tasarlandı.
+            </p>
+          </div>
+
+          <div class="intro-grid advanced-intro-grid">
+            <article class="info-card feature-panel">
+              <p class="card-tag">Hedef Kitle</p>
+              <h3>Aileler, çiftler, arkadaş grupları ve butik organizasyonlar için esnek yapı</h3>
+              <p>
+                Sade bir günübirlik turdan özel kutlama konseptine kadar farklı beklentileri aynı premium dil içinde sunar.
+              </p>
+            </article>
+            <article class="info-card feature-panel">
+              <p class="card-tag">Operasyon Akışı</p>
+              <h3>Göcek Marina buluşması, net rota anlatımı ve planlı servis düzeni</h3>
+              <p>
+                Misafir neyle karşılaşacağını önceden bilir; bu da soru işaretlerini azaltır ve güveni artırır.
+              </p>
+            </article>
+            <article class="info-card feature-panel dark-panel">
+              <p class="card-tag light-tag">Premium İmaj</p>
+              <h3>Daha rafine renk sistemi, güçlü tipografi ve seçkin marka hissi</h3>
+              <p>
+                Sayfa yalnızca bilgi veren değil, markanın değerini yükselten modern bir tanıtım vitrinine dönüştü.
+              </p>
+            </article>
+          </div>
+        </section>
+
+        <section class="section container" id="turlar">
+          <div class="section-heading">
+            <p class="eyebrow">Tur seçenekleri</p>
+            <h2>Karar vermeyi hızlandıran net paket yapısı ve daha güçlü hizmet anlatımı</h2>
+            <p>
+              Her paket; kimlere uygun olduğu, sunduğu his ve öne çıkan avantajları ile daha anlaşılır biçimde anlatılıyor.
+            </p>
+          </div>
+
+          <div class="cards premium-cards">
+            <article class="tour-card featured premium-tour-card">
+              <p class="tour-type">En çok tercih edilen</p>
+              <h3>Günübirlik Tekne Turu</h3>
+              <p>
+                Göcek'in öne çıkan koylarında yüzme, dinlenme ve öğle yemeği akışını dengeli şekilde bir araya getiren sosyal bir tam gün deneyimi.
+              </p>
+              <ul>
+                <li>Sabah çıkış ve gün boyu dengeli rota planı</li>
+                <li>Aileler, çiftler ve küçük gruplar için ideal</li>
+                <li>Öğle yemeği seçimini önceden iletme avantajı</li>
+              </ul>
+            </article>
+
+            <article class="tour-card premium-tour-card">
+              <p class="tour-type">Daha kişisel deneyim</p>
+              <h3>Özel Günübirlik Tur</h3>
+              <p>
+                Tekneyi yalnızca kendi grubunuzla kullanmak, tempoyu belirlemek ve daha mahrem bir atmosfer kurmak isteyenler için güçlü alternatif.
+              </p>
+              <ul>
+                <li>Kişiye özel rota ve mola esnekliği</li>
+                <li>Yıldönümü ve doğum günü kutlamalarına uygun</li>
+                <li>Daha sakin ve premium deneyim kurgusu</li>
+              </ul>
+            </article>
+
+            <article class="tour-card premium-tour-card">
+              <p class="tour-type">Butik ve etkileyici</p>
+              <h3>Gün Batımı &amp; Özel Kiralama</h3>
+              <p>
+                Daha kısa ama duygusal etkisi yüksek bir program arayanlar için romantik, fotoğraf odaklı ve şık bir deniz alternatifi sunar.
+              </p>
+              <ul>
+                <li>Gün batımı manzarası eşliğinde özel planlama</li>
+                <li>Evlilik teklifi ve mini kutlamalara uygun</li>
+                <li>Ek süsleme ve özel isteklerle zenginleştirilebilir</li>
+              </ul>
+            </article>
+          </div>
+        </section>
+
+        <section class="section route-section" id="rota">
+          <div class="container split-grid route-grid">
+            <div>
+              <p class="eyebrow">Rota ve gün planı</p>
+              <h2>Tur gününün nasıl geçeceğini misafire açık ve profesyonel şekilde gösterin</h2>
+              <p>
+                Güven oluşturan satış sayfaları yalnızca hizmeti değil, deneyimin akışını da anlatır. Bu bölüm tur gününü net bir çerçevede sunar.
+              </p>
+
+              <div class="route-highlights">
+                <div class="mini-glass-card">
+                  <strong>Net buluşma süreci</strong>
+                  <span>Konum paylaşımı ve giriş bilgisi önceden iletilir.</span>
+                </div>
+                <div class="mini-glass-card">
+                  <strong>Dengeli rota temposu</strong>
+                  <span>Yüzme, dinlenme ve servis süreleri iyi dağıtılır.</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="timeline-card glass-strong">
+              <div class="timeline-item">
+                <span>01</span>
+                <div>
+                  <strong>Marinada buluşma</strong>
+                  <p>Konum paylaşımı ve kısa karşılama sonrası tekneye rahat geçiş yapılır.</p>
+                </div>
+              </div>
+              <div class="timeline-item">
+                <span>02</span>
+                <div>
+                  <strong>İlk koy molası</strong>
+                  <p>Serin su, kısa bilgilendirme ve sakin başlangıç ile güne yumuşak bir giriş yapılır.</p>
+                </div>
+              </div>
+              <div class="timeline-item">
+                <span>03</span>
+                <div>
+                  <strong>Öğle yemeği &amp; dinlenme</strong>
+                  <p>Seçilen menü servis edilir; misafirler yüzme ve dinlenme arasında konforlu seçim yapar.</p>
+                </div>
+              </div>
+              <div class="timeline-item">
+                <span>04</span>
+                <div>
+                  <strong>Ek koylar ve dönüş</strong>
+                  <p>Günün temposuna göre ek duraklar değerlendirilir ve marina dönüşü tamamlanır.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="section accent-section" id="neden-biz">
+          <div class="container split-grid">
+            <div>
+              <p class="eyebrow">Neden Grand Azure?</p>
+              <h2>Profesyonel sunum, net bilgi ve kolay iletişim aynı deneyimde buluşuyor</h2>
+              <p>
+                Yeni yapı yalnızca estetik değil; misafirin en sık yaşadığı kararsızlık noktalarını kapatmak için tasarlandı.
+              </p>
+            </div>
+            <div class="benefits premium-benefits">
+              <div class="benefit">
+                <strong>Daha güçlü ilk ekran</strong>
+                <p>Görsel yoğunluğu dengelenmiş, daha prestijli bir karşılama alanı oluşturuldu.</p>
+              </div>
+              <div class="benefit">
+                <strong>Hizmet standardı netliği</strong>
+                <p>Misafir tur akışını ve iletişim tarzını daha ilk bakışta anlayabiliyor.</p>
+              </div>
+              <div class="benefit">
+                <strong>Karar kolaylaştıran rota kurgusu</strong>
+                <p>Turun nasıl ilerlediği açıkça görüldüğü için rezervasyon eşiği düşüyor.</p>
+              </div>
+              <div class="benefit">
+                <strong>Dönüşüm odaklı CTA sistemi</strong>
+                <p>Sayfanın kritik noktalarında kullanıcıyı doğal biçimde teklif alma aksiyonuna taşıyor.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="section container service-section">
+          <div class="section-heading">
+            <p class="eyebrow">Hizmet farkları</p>
+            <h2>Satın alma kararını destekleyen operasyon detayları</h2>
+          </div>
+          <div class="service-grid">
+            <article class="service-card">
+              <strong>Rezervasyon öncesi hızlı bilgilendirme</strong>
+              <p>Tarih, kişi sayısı ve tur tipine göre hızlı ve düzenli geri dönüş sağlanır.</p>
+            </article>
+            <article class="service-card">
+              <strong>Temiz ve rafine sunum</strong>
+              <p>Tekneye gelişten yemek akışına kadar deneyimin bütününe planlı bir dil yansır.</p>
+            </article>
+            <article class="service-card">
+              <strong>Esnek özel talepler</strong>
+              <p>Süsleme, kutlama, rota önceliği ve gün batımı senaryoları önceden planlanabilir.</p>
+            </article>
+            <article class="service-card">
+              <strong>Görünür iletişim kanalları</strong>
+              <p>Telefon, WhatsApp ve Instagram bağlantıları sayfa boyunca erişilebilir tutulur.</p>
+            </article>
+          </div>
+        </section>
+
+        <section class="section container" id="yorumlar">
+          <div class="section-heading narrow">
+            <p class="eyebrow">Sosyal kanıt</p>
+            <h2>Atmosferi ve güven hissini birlikte gösteren vitrin alanları</h2>
+            <p>
+              Ziyaretçi çoğu zaman önce görsel atmosferi, sonra yorumları inceler. Bu yüzden sosyal kanıt bölümleri daha görünür ve daha prestijli bir düzende işlendi.
+            </p>
+          </div>
+
+          <div class="social-grid review-showcase">
+            <article class="social-card instagram-card spotlight-card">
+              <div>
+                <p class="card-tag">Instagram Vitrini</p>
+                <h3>@gocekgrandazure</h3>
+                <p>
+                  Teknenin atmosferini, Göcek koylarının hissini ve servis detaylarını en hızlı anlatan kanal. Özellikle reels içerikleri güçlü ön izleme sağlar.
+                </p>
+              </div>
+              <div class="social-actions">
+                <a class="button primary" href="https://www.instagram.com/gocekgrandazure/" target="_blank" rel="noopener noreferrer">Instagram Profilini Aç</a>
+                <a class="button secondary" href="https://www.instagram.com/gocekgrandazure/reels/" target="_blank" rel="noopener noreferrer">Reels Videoları</a>
+              </div>
+            </article>
+
+            <article class="embed-card trip-widget-card">
+              <div class="embed-card-head">
+                <div>
+                  <p class="card-tag">Tripadvisor Güveni</p>
+                  <h3>Resmi yorum sayfasına yönlendirme</h3>
+                </div>
+                <span>İlk kez rezervasyon yapacak ziyaretçi için güçlü referans</span>
+              </div>
+              <p class="embed-note">
+                Üçüncü taraf yorum sayfası, güven eşiğini düşürür ve ziyaretçinin iletişime geçmesini kolaylaştırır.
+              </p>
+              <div class="social-actions compact-actions">
+                <a class="button primary" href="https://www.tripadvisor.com.tr/Attraction_Review-g298032-d26499348-Reviews-Gocek_Grand_Azure_Gunluk_Tur_Teknesi-Gocek_Mugla_Province_Turkish_Aegean_Coast.html" target="_blank" rel="noopener noreferrer">Tripadvisor Sayfasını Aç</a>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <section class="section container faq-section" id="sss">
+          <div class="section-heading narrow">
+            <p class="eyebrow">Sık Sorulan Sorular</p>
+            <h2>Rezervasyon öncesi en sık gelen sorulara kısa ve net yanıtlar</h2>
+          </div>
+          <div class="faq-list">
+            <article class="faq-item">
+              <h3>Tur süresi ne kadar?</h3>
+              <p>Seçilen pakete göre değişmekle birlikte günübirlik programlar sabah başlayıp gün içinde tamamlanır; özel turlarda süre birlikte netleştirilir.</p>
+            </article>
+            <article class="faq-item">
+              <h3>Çocuklu aileler için uygun mu?</h3>
+              <p>Evet. Özellikle sakin koy molaları ve planlı akış sayesinde aileler için konforlu bir deneyim hedeflenir.</p>
+            </article>
+            <article class="faq-item">
+              <h3>Özel organizasyon yapılabiliyor mu?</h3>
+              <p>Doğum günü, yıldönümü, evlilik teklifi veya butik kutlamalar için talebinize göre ek planlama yapılabilir.</p>
+            </article>
+            <article class="faq-item">
+              <h3>Rezervasyon nasıl kesinleşiyor?</h3>
+              <p>Form ya da WhatsApp üzerinden ön bilgileri paylaştıktan sonra uygunluk ve detay teyidi ile rezervasyon süreci netleştirilir.</p>
+            </article>
+          </div>
+        </section>
+
+        <section class="section container cta-banner-section">
+          <div class="cta-banner">
+            <div>
+              <p class="eyebrow">Rezervasyon zamanı</p>
+              <h2>Göcek'te denize açılacağınız günü birlikte planlayalım</h2>
+              <p>
+                Tarih, kişi sayısı ve tur tipini paylaşın; Grand Azure ekibi size en uygun seçenekleri hızlıca WhatsApp üzerinden iletsin.
+              </p>
+            </div>
+            <div class="hero-actions">
+              <a class="button primary" href="#rezervasyon">Hemen Rezervasyon Talebi Oluştur</a>
+              <a class="button secondary light" href="https://wa.me/905304053501" target="_blank" rel="noopener noreferrer">Direkt WhatsApp Aç</a>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer class="footer">
+        <div class="container footer-content">
+          <div class="footer-brand">
+            <a class="brand brand-link" href="#top">
+              <img src="assets/grand-azure-logo.svg" alt="Grand Azure logosu" class="brand-logo" />
+              <div>
+                <strong>GRAND AZURE</strong>
+                <span>Göcek Boat Experience</span>
+              </div>
+            </a>
+            <p>
+              Rezervasyon ve hızlı teklif için <a href="tel:05304053501">0530 405 35 01</a> veya
+              <a href="https://wa.me/905304053501" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+              üzerinden bizimle iletişime geçin. Göcek Marina çıkışlı günübirlik ve özel tur planlamalarında hızlı dönüş sağlanır.
+            </p>
+          </div>
+          <a class="button secondary" href="#rezervasyon">Rezervasyon Oluştur</a>
+        </div>
+      </footer>
+    </div>
 
     <script>
       const bookingForm = document.getElementById('booking-form');
