@@ -119,7 +119,8 @@ h2 {
 .tour-card p,
 .social-card p,
 .embed-note,
-.embed-card span {
+.embed-card span,
+.field-hint {
   color: var(--muted);
   font-size: 1.05rem;
   line-height: 1.7;
@@ -183,7 +184,8 @@ h2 {
 .info-card,
 .benefit,
 .social-card,
-.embed-card {
+.embed-card,
+.gallery-tile {
   backdrop-filter: blur(16px);
   background: var(--surface);
   border: 1px solid var(--border);
@@ -200,7 +202,8 @@ h2 {
 }
 
 .card-tag,
-.tour-type {
+.tour-type,
+.tile-label {
   display: inline-flex;
   margin-bottom: 0.75rem;
   background: rgba(15, 154, 184, 0.1);
@@ -233,6 +236,24 @@ h2 {
   font: inherit;
   background: rgba(255, 255, 255, 0.95);
   resize: vertical;
+}
+
+.conditional-field {
+  display: none;
+  gap: 0.5rem;
+  padding: 1rem;
+  border-radius: 18px;
+  background: rgba(15, 154, 184, 0.06);
+  border: 1px dashed rgba(15, 154, 184, 0.2);
+}
+
+.conditional-field.is-visible {
+  display: grid;
+}
+
+.field-hint {
+  margin: 0;
+  font-size: 0.95rem;
 }
 
 .booking-note {
@@ -313,8 +334,70 @@ h2 {
   border-color: rgba(255, 255, 255, 0.1);
 }
 
+.instagram-layout {
+  align-items: stretch;
+}
+
 .instagram-card {
   background: linear-gradient(180deg, rgba(230, 76, 125, 0.08), rgba(255, 255, 255, 0.92));
+}
+
+.spotlight-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.instagram-gallery {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.gallery-tile {
+  min-height: 190px;
+  padding: 1.25rem;
+  text-decoration: none;
+  color: var(--text);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  position: relative;
+  overflow: hidden;
+}
+
+.gallery-tile::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  opacity: 0.9;
+  z-index: 0;
+}
+
+.gallery-tile > * {
+  position: relative;
+  z-index: 1;
+}
+
+.tile-large::before {
+  background: linear-gradient(145deg, rgba(8, 44, 73, 0.75), rgba(15, 154, 184, 0.28));
+}
+
+.tile-gradient::before {
+  background: linear-gradient(145deg, rgba(235, 72, 125, 0.8), rgba(246, 183, 60, 0.35));
+}
+
+.tile-soft::before {
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.78), rgba(15, 154, 184, 0.12));
+}
+
+.tile-dark::before {
+  background: linear-gradient(145deg, rgba(17, 39, 58, 0.88), rgba(62, 91, 115, 0.4));
+}
+
+.gallery-tile strong {
+  font-size: 1.2rem;
+  line-height: 1.4;
 }
 
 .trip-card {
@@ -333,19 +416,26 @@ h2 {
   font-size: 0.95rem;
 }
 
-.iframe-shell {
+.tripadvisor-widget-shell {
   min-height: 420px;
   border-radius: 20px;
   overflow: hidden;
   border: 1px solid rgba(21, 48, 71, 0.08);
-  background: #f2f5f8;
+  background: linear-gradient(180deg, #f9fcfe, #eef4f8);
+  padding: 1rem;
 }
 
-.iframe-shell iframe {
-  width: 100%;
-  min-height: 420px;
-  border: 0;
-  background: white;
+.tripadvisor-widget-shell .TA_selfserveprop,
+.tripadvisor-widget-shell .TA_links,
+.tripadvisor-widget-shell li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.tripadvisor-widget-shell a {
+  color: var(--primary-dark);
+  font-weight: 700;
 }
 
 .embed-note {
@@ -372,7 +462,8 @@ h2 {
   .split-grid,
   .info-grid,
   .hero-highlights,
-  .social-grid {
+  .social-grid,
+  .instagram-gallery {
     grid-template-columns: 1fr;
   }
 
