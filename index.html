@@ -70,6 +70,21 @@
                 <option>Özel Tekne Kiralama</option>
               </select>
             </label>
+            <div class="conditional-field" id="mealField">
+              <label>
+                Öğle Yemeği Ana Yemek Seçimi
+                <select id="mealChoice">
+                  <option value="">Ana yemek seçin</option>
+                  <option>Tavuk</option>
+                  <option>Balık</option>
+                  <option>Köfte</option>
+                </select>
+              </label>
+              <p class="field-hint">
+                Günübirlik turlarda öğle yemeği için ana yemek tercihinizi rezervasyon sırasında
+                iletebilirsiniz.
+              </p>
+            </div>
             <label>
               Tarih
               <input type="date" id="date" required />
@@ -115,7 +130,7 @@
             <ul>
               <li>Paylaşımlı veya butik konsept seçenekleri</li>
               <li>Aileler, çiftler ve arkadaş grupları için ideal</li>
-              <li>Hızlı rezervasyon ve kolay iletişim</li>
+              <li>Öğle yemeğinde tavuk, balık veya köfte seçimi</li>
             </ul>
           </article>
 
@@ -129,7 +144,7 @@
             <ul>
               <li>Doğum günü, yıldönümü ve özel kutlamalar</li>
               <li>İstediğiniz koylara göre rota planı</li>
-              <li>WhatsApp üzerinden birebir teklif akışı</li>
+              <li>Menü tercihini rezervasyon anında belirleme</li>
             </ul>
           </article>
 
@@ -165,12 +180,12 @@
               <p>Form dolduran ziyaretçi doğrudan WhatsApp konuşmasına yönlendirilir.</p>
             </div>
             <div class="benefit">
-              <strong>Canlı Sosyal Vitrin</strong>
-              <p>Instagram hesabına tek dokunuşla erişim ve profil içeriklerini öne çıkaran alan.</p>
+              <strong>Profesyonel Galeri</strong>
+              <p>Instagram içerikleri artık editoryal kart düzeniyle daha güçlü sunuluyor.</p>
             </div>
             <div class="benefit">
-              <strong>Güven Veren Yorumlar</strong>
-              <p>Tripadvisor bağlantısı ve yorum alanı ile karar sürecini destekleyen yapı.</p>
+              <strong>Canlı Tripadvisor Akışı</strong>
+              <p>Resmi Tripadvisor widget yapısı ile yorumları sitede otomatik güncel gösterme altyapısı.</p>
             </div>
           </div>
         </div>
@@ -179,23 +194,22 @@
       <section class="section container" id="instagram">
         <div class="section-heading narrow">
           <p class="eyebrow">Instagram</p>
-          <h2>@gocekgrandazure hesabını canlı olarak takip edin</h2>
+          <h2>Instagram içeriklerini galeri deneyimine dönüştürdük</h2>
           <p>
-            Hesabınızda yayınlanan yeni görsel ve videoları ziyaretçilerinizin anında görebilmesi
-            için Instagram profilinize güçlü yönlendirme ekledik. Ayrıca aşağıdaki alan, resmi
-            Instagram embed akışına uygun şekilde güncel paylaşımları sergilemek için hazırlandı.
+            Profil yönlendirmesini korurken, içerik alanını daha profesyonel bir galeri vitrini gibi
+            kurguladık. Böylece ziyaretçiler hem markanın atmosferini hızlıca hisseder hem de resmi
+            Instagram hesabına geçiş yapar.
           </p>
         </div>
 
-        <div class="social-grid">
-          <article class="social-card instagram-card">
+        <div class="social-grid instagram-layout">
+          <article class="social-card instagram-card spotlight-card">
             <div>
               <p class="card-tag">Resmi Hesap</p>
-              <h3>Göcek Grand Azure Instagram</h3>
+              <h3>@gocekgrandazure</h3>
               <p>
-                Reels, fotoğraflar, tur anları ve yeni paylaşımlar için resmi hesabı ziyaret edin.
-                Yeni içerikler Instagram profilinizde yayınlandıkça ziyaretçiler bu bağlantıdan en
-                güncel akışı görebilir.
+                Reels, tur anları, mavi yolculuk kareleri ve tekne üzerindeki deneyim odaklı
+                paylaşımlar için resmi hesabınızı öne çıkaran profesyonel vitrin alanı.
               </p>
             </div>
             <div class="social-actions">
@@ -211,39 +225,40 @@
                 href="https://www.instagram.com/gocekgrandazure/reels/"
                 target="_blank"
                 rel="noopener noreferrer"
-                >Videoları Gör</a
+                >Reels Videoları</a
               >
             </div>
           </article>
 
-          <article class="embed-card">
-            <div class="embed-card-head">
-              <h3>Instagram Akışı</h3>
-              <span>Otomatik güncellenen profil görünümü</span>
-            </div>
-            <div class="iframe-shell">
-              <iframe
-                src="https://www.instagram.com/gocekgrandazure/embed"
-                title="Göcek Grand Azure Instagram"
-                loading="lazy"
-                referrerpolicy="strict-origin-when-cross-origin"
-              ></iframe>
-            </div>
-            <p class="embed-note">
-              Not: Instagram bazı tarayıcılarda gömme görünümünü kısıtlayabilir; bu durumda profil
-              bağlantıları ziyaretçiyi doğrudan resmi hesabınıza yönlendirir.
-            </p>
-          </article>
+          <div class="instagram-gallery" aria-label="Instagram içerik galerisi">
+            <a class="gallery-tile tile-large" href="https://www.instagram.com/gocekgrandazure/" target="_blank" rel="noopener noreferrer">
+              <span class="tile-label">Mavi Yolculuk</span>
+              <strong>Koylardan seçilen en etkileyici anlar</strong>
+            </a>
+            <a class="gallery-tile tile-gradient" href="https://www.instagram.com/gocekgrandazure/reels/" target="_blank" rel="noopener noreferrer">
+              <span class="tile-label">Reels</span>
+              <strong>Hareketli içeriklerle tur deneyimini izleyin</strong>
+            </a>
+            <a class="gallery-tile tile-soft" href="https://www.instagram.com/gocekgrandazure/tagged/" target="_blank" rel="noopener noreferrer">
+              <span class="tile-label">Misafir Paylaşımları</span>
+              <strong>Ziyaretçi gözünden gerçek deneyim kareleri</strong>
+            </a>
+            <a class="gallery-tile tile-dark" href="https://www.instagram.com/gocekgrandazure/" target="_blank" rel="noopener noreferrer">
+              <span class="tile-label">Premium Sunum</span>
+              <strong>Tekne, servis ve atmosferi güçlü bir vitrinle gösterin</strong>
+            </a>
+          </div>
         </div>
       </section>
 
       <section class="section container" id="yorumlar">
         <div class="section-heading narrow">
           <p class="eyebrow">Tripadvisor</p>
-          <h2>Tripadvisor sayfanızla güveni artırın</h2>
+          <h2>Tripadvisor yorumlarını otomatik gösteren daha profesyonel alan</h2>
           <p>
-            Ziyaretçiler, gerçek misafir değerlendirmelerini inceleyerek rezervasyon kararını daha
-            hızlı verebilir. Aşağıdaki kart üzerinden resmi Tripadvisor sayfanıza ulaşabilirler.
+            Tripadvisor'ın widget altyapısı, uygun tarayıcı ve erişim koşullarında son yorumları ve
+            puan görünümünü otomatik olarak sitenize taşır. Böylece ziyaretçiler harici sayfaya
+            geçmeden önce güncel sosyal kanıtı doğrudan bu bölümde görebilir.
           </p>
         </div>
 
@@ -253,8 +268,8 @@
               <p class="card-tag">Yorum ve Puanlar</p>
               <h3>Gocek Grand Azure Tripadvisor</h3>
               <p>
-                Güncel değerlendirmeleri, misafir yorumlarını ve platform üzerindeki görünürlüğünüzü
-                tek tıkla inceletin.
+                Resmi Tripadvisor sayfanıza tek tıkla erişim sağlayın, yorumları inceletin ve yeni
+                değerlendirmeler geldikçe widget alanında otomatik güncellenen görünümü kullanın.
               </p>
             </div>
             <div class="social-actions">
@@ -268,22 +283,28 @@
             </div>
           </article>
 
-          <article class="embed-card">
+          <article class="embed-card trip-widget-card">
             <div class="embed-card-head">
-              <h3>Tripadvisor Görünümü</h3>
-              <span>Harici sayfa ön izlemesi</span>
+              <h3>Canlı Tripadvisor Widget</h3>
+              <span>Otomatik güncellenen resmi yorum görünümü</span>
             </div>
-            <div class="iframe-shell">
-              <iframe
-                src="https://www.tripadvisor.com.tr/Attraction_Review-g298032-d26499348-Reviews-Gocek_Grand_Azure_Gunluk_Tur_Teknesi-Gocek_Mugla_Province_Turkish_Aegean_Coast.html"
-                title="Gocek Grand Azure Tripadvisor"
-                loading="lazy"
-                referrerpolicy="strict-origin-when-cross-origin"
-              ></iframe>
+            <div class="tripadvisor-widget-shell">
+              <div id="TA_selfserveprop264" class="TA_selfserveprop">
+                <ul id="s1gIYp8nTZ" class="TA_links D3djtwQ">
+                  <li>
+                    <a
+                      href="https://www.tripadvisor.com.tr/Attraction_Review-g298032-d26499348-Reviews-Gocek_Grand_Azure_Gunluk_Tur_Teknesi-Gocek_Mugla_Province_Turkish_Aegean_Coast.html"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      >Gocek Grand Azure Tripadvisor yorumlarını görüntüle</a
+                    >
+                  </li>
+                </ul>
+              </div>
             </div>
             <p class="embed-note">
-              Tripadvisor gömme erişimini kısıtlarsa ziyaretçi butona tıklayarak resmi sayfayı yeni
-              sekmede açabilir.
+              Tripadvisor widget'ı platformun resmi betiği üzerinden yüklenir. Tarayıcı veya gizlilik
+              ayarları widget'ı engellerse üstteki buton ile resmi sayfa yeni sekmede açılır.
             </p>
           </article>
         </div>
@@ -308,8 +329,8 @@
             </p>
           </div>
           <div class="info-card">
-            <h3>Sosyal Kanıt</h3>
-            <p>Instagram içerikleri ve Tripadvisor görünürlüğü ile güven veren dijital vitrin.</p>
+            <h3>Öğle Yemeği Seçimi</h3>
+            <p>Günübirlik turlarda ana yemek tercihi tavuk, balık veya köfte olarak formdan seçilebilir.</p>
           </div>
         </div>
       </section>
@@ -329,15 +350,37 @@
       </div>
     </footer>
 
+    <script src="https://www.jscache.com/wejs?wtype=selfserveprop&amp;uniq=264&amp;locationId=26499348&amp;lang=tr&amp;rating=true&amp;nreviews=4&amp;writereviewlink=true&amp;popIdx=true&amp;iswide=true&amp;border=false&amp;display_version=2" async></script>
     <script>
       const bookingForm = document.getElementById('booking-form');
+      const tourTypeSelect = document.getElementById('tourType');
+      const mealField = document.getElementById('mealField');
+      const mealChoiceSelect = document.getElementById('mealChoice');
+
+      function isDayTour(value) {
+        return value.toLowerCase().includes('günübirlik');
+      }
+
+      function syncMealField() {
+        const shouldShowMealField = isDayTour(tourTypeSelect.value);
+        mealField.classList.toggle('is-visible', shouldShowMealField);
+        mealChoiceSelect.required = shouldShowMealField;
+
+        if (!shouldShowMealField) {
+          mealChoiceSelect.value = '';
+        }
+      }
+
+      syncMealField();
+      tourTypeSelect.addEventListener('change', syncMealField);
 
       bookingForm.addEventListener('submit', function (event) {
         event.preventDefault();
 
         const name = document.getElementById('name').value.trim();
         const phone = document.getElementById('phone').value.trim();
-        const tourType = document.getElementById('tourType').value;
+        const tourType = tourTypeSelect.value;
+        const mealChoice = mealChoiceSelect.value.trim();
         const date = document.getElementById('date').value;
         const guests = document.getElementById('guests').value.trim();
         const message = document.getElementById('message').value.trim();
@@ -347,6 +390,7 @@
           `Ad Soyad: ${name}`,
           `Telefon: ${phone}`,
           `Tur Tipi: ${tourType}`,
+          `Öğle Yemeği Ana Yemek: ${isDayTour(tourType) ? mealChoice : '-'}`,
           `Tarih: ${date || '-'}`,
           `Kişi Sayısı: ${guests}`,
           `Ek Not: ${message || '-'}`,
