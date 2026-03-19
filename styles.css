@@ -290,6 +290,7 @@ h1, h2 { font-family: 'Playfair Display', serif; }
 }
 
 .split-heading { display: flex; justify-content: space-between; gap: 1rem; align-items: end; }
+.gallery-actions { display: flex; gap: 0.75rem; flex-wrap: wrap; justify-content: flex-end; }
 .gallery-grid {
   display: grid;
   grid-template-columns: 1.2fr 1fr 1fr;
