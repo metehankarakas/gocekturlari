@@ -239,19 +239,30 @@
         <section class="section container" id="gallery">
           <div class="section-heading split-heading">
             <div>
-              <p class="eyebrow dark" data-i18n="gallery.eyebrow">Görsel atmosfer</p>
-              <h2 data-i18n="gallery.title">Markayı daha premium hissettiren güçlü vitrin alanı</h2>
+              <p class="eyebrow dark" data-i18n="gallery.eyebrow">Instagram akışı</p>
+              <h2 data-i18n="gallery.title">Grand Azure Instagram fotoğraf ve videoları sitede otomatik güncellensin</h2>
             </div>
             <div class="gallery-actions">
               <a class="button button-secondary" href="https://www.instagram.com/gocekgrandazure/" target="_blank" rel="noopener noreferrer" data-i18n="gallery.cta">Instagram Profilini Aç</a>
               <a class="button button-secondary" href="https://www.instagram.com/gocekguletasilata/" target="_blank" rel="noopener noreferrer">@gocekguletasilata</a>
             </div>
           </div>
-          <div class="gallery-grid">
-            <article class="gallery-card scenic-a"><div class="gallery-copy"><strong data-i18n="gallery.card1Title">Elegant Deck Moments</strong><span data-i18n="gallery.card1Text">Sakinlik, konfor ve ferah detaylar.</span></div></article>
-            <article class="gallery-card scenic-b"><div class="gallery-copy"><strong data-i18n="gallery.card2Title">Turquoise Escape</strong><span data-i18n="gallery.card2Text">Göcek koylarında seçkin rota hissi.</span></div></article>
-            <article class="gallery-card scenic-c"><div class="gallery-copy"><strong data-i18n="gallery.card3Title">Sunset Signature</strong><span data-i18n="gallery.card3Text">Özel anlara uygun butik atmosfer.</span></div></article>
+
+          <div class="instagram-panel glass-strong">
+            <div class="instagram-panel-copy">
+              <p class="card-tag" data-i18n="gallery.panelTag">Instagram Graph API</p>
+              <h3 data-i18n="gallery.panelTitle">Bağlantı hazır: sadece API endpoint'inizi ekleyin</h3>
+              <p data-i18n="gallery.panelText">Aşağıdaki alan, güvenli bir backend/proxy endpoint'inden gelen Instagram medya listesini gösterir. Fotoğraf, video ve carousel içerikleri desteklenir.</p>
+            </div>
+            <ol class="instagram-steps">
+              <li data-i18n="gallery.step1">Bir Instagram Business veya Creator hesabını Facebook sayfasına bağlayın.</li>
+              <li data-i18n="gallery.step2">Sunucuda access token saklayan bir endpoint oluşturun.</li>
+              <li data-i18n="gallery.step3">Bu sayfadaki <code>instagramConfig.endpoint</code> değerini kendi endpoint'inizle değiştirin.</li>
+            </ol>
           </div>
+
+          <div class="instagram-status" id="instagram-status" data-i18n="gallery.loading">Instagram içerikleri yükleniyor...</div>
+          <div class="instagram-grid" id="instagram-feed" aria-live="polite"></div>
         </section>
 
         <section class="section container faq-section" id="faq">
@@ -334,18 +345,24 @@
           experience: { eyebrow: 'Grand Azure farkı', title: 'İlk bakışta güven veren, yerinde ise huzur hissettiren bir deneyim', text: 'Misafirlerin beklentisi sadece tekne turu değil; iyi iletişim, düzenli akış ve kaliteli hizmettir. Grand Azure, bu beklentiyi ilk temastan turun son anına kadar hissettiren bir deneyim sunar.', card1Tag: 'Servis standardı', card1Title: 'Net iletişim, hızlı rezervasyon, güçlü ilk izlenim', card1Text: 'Rezervasyon sürecinde ihtiyaç duyduğunuz bilgiler açık, anlaşılır ve kolay ulaşılır biçimde sunulur.', card2Tag: 'Premium his', card2Title: 'Sade lüks yaklaşımıyla daha prestijli marka algısı', card2Text: 'Ferah düzen, modern detaylar ve dengeli görseller daha seçkin bir marka hissi oluşturur.' },
           tours: { eyebrow: 'Tur seçenekleri', title: 'Her misafir tipi için rafine edilmiş planlar', card1Label: 'En popüler', card1Title: 'Günübirlik Tekne Turu', card1Text: "Göcek'in seçkin koylarında yüzme, dinlenme ve keyifli bir tam gün deneyimi.", card1Item1: 'Dengeli rota planı', card1Item2: 'Aileler ve çiftler için ideal yapı', card1Item3: 'Kolay rezervasyon süreci', card2Label: 'Özel deneyim', card2Title: 'Özel Tekne Kiralama', card2Text: 'Tekneyi yalnızca kendi grubunuz için ayırın ve günü kendi temponuzda yaşayın.', card2Item1: 'Esnek rota ve saat planı', card2Item2: 'Daha mahrem ve prestijli atmosfer', card2Item3: 'Kişisel ihtiyaçlara göre uyarlama', card3Label: 'Özel anlar', card3Title: 'Gün Batımı ve Kutlama Turları', card3Text: 'Evlilik teklifi, doğum günü veya sakin bir sunset cruise için butik planlama.', card3Item1: 'Yüksek görsel etki', card3Item2: 'Romantik ve zarif atmosfer', card3Item3: 'Etkinliğe özel kurgulanabilir' },
           route: { eyebrow: 'Rota akışı', title: 'Tur günü sakin, planlı ve konforlu ilerler', text: 'Günün her adımı, konforu artıran net bilgi paylaşımı ve düzenli planlama ile ilerler.', step1Title: 'Marinada buluşma', step1Text: 'Buluşma saati ve konum bilgileri önceden net şekilde paylaşılır.', step2Title: 'Seçkin koy durakları', step2Text: 'Günün temposuna uygun yüzme ve dinlenme molaları verilir.', step3Title: 'Servis ve dinlenme', step3Text: 'Öğle yemeği ve rahatlama anları deneyimin merkezinde tutulur.', step4Title: 'Güvenli dönüş', step4Text: 'Tur, marina dönüşüyle düzenli ve sorunsuz biçimde tamamlanır.' },
-          gallery: { eyebrow: 'Görsel atmosfer', title: 'Markayı daha premium hissettiren güçlü vitrin alanı', cta: 'Instagram Profilini Aç', card1Title: 'Elegant Deck Moments', card1Text: 'Sakinlik, konfor ve ferah detaylar.', card2Title: 'Turquoise Escape', card2Text: 'Göcek koylarında seçkin rota hissi.', card3Title: 'Sunset Signature', card3Text: 'Özel anlara uygun butik atmosfer.' },
+          gallery: { eyebrow: 'Instagram akışı', title: 'Grand Azure Instagram fotoğraf ve videoları sitede otomatik güncellensin', cta: 'Instagram Profilini Aç', panelTag: 'Instagram Graph API', panelTitle: 'Bağlantı hazır: sadece API endpoint\'inizi ekleyin', panelText: 'Aşağıdaki alan, güvenli bir backend/proxy endpoint\'inden gelen Instagram medya listesini gösterir. Fotoğraf, video ve carousel içerikleri desteklenir.', step1: 'Bir Instagram Business veya Creator hesabını Facebook sayfasına bağlayın.', step2: 'Sunucuda access token saklayan bir endpoint oluşturun.', step3: 'Bu sayfadaki instagramConfig.endpoint değerini kendi endpoint\'inizle değiştirin.', loading: 'Instagram içerikleri yükleniyor...', empty: 'Henüz gösterilecek Instagram içeriği bulunamadı.', error: 'Instagram içerikleri şu anda alınamadı. Endpoint veya access token ayarını kontrol edin.', fallbackTitle: 'Instagram bağlantısı bekleniyor', fallbackText: 'API endpoint eklendiğinde bu alanda Grand Azure hesabındaki son fotoğraf ve videolar otomatik görünecek.', photoLabel: 'Fotoğraf', videoLabel: 'Video', carouselLabel: 'Galeri', watchVideo: 'Videoyu İzle', viewPost: 'Instagram\'da Aç' },
           faq: { eyebrow: 'Sık sorulan sorular', title: 'Rezervasyon öncesi en çok merak edilenler', q1: 'Turlar nereden başlıyor?', a1: 'Turlar Göcek Marina çıkışlıdır. Detaylı buluşma bilgisi rezervasyon sonrası paylaşılır.', q2: 'Yabancı misafirler için uygun mu?', a2: 'Evet. Site artık İngilizce, Almanca ve Rusça dahil çok dilli sunumla hazırlanmıştır.', q3: 'Özel organizasyon yapılabiliyor mu?', a3: 'Evet. Doğum günü, yıldönümü, teklif ve butik grup etkinlikleri planlanabilir.', q4: 'Rezervasyon nasıl ilerliyor?', a4: 'Formu doldurduktan sonra WhatsApp üzerinden hızlı bir teyit ve teklif süreci başlatılır.' }, footer: { summary: 'Göcek çıkışlı günlük tekne turları, özel charter planları ve butik deniz deneyimleri için seçkin hizmet sunuyoruz.', quickLinksTitle: 'Hızlı bağlantılar', contactTitle: 'İletişim', location: 'Göcek Marina, Muğla', highlightBadge: 'Premium Hizmet', highlightText: 'WhatsApp üzerinden hızlı dönüş ve zarif rezervasyon akışı.', ctaWhatsapp: "WhatsApp'tan Yaz", ctaCall: 'Hemen Ara', copy: '© 2026 Grand Azure. Tüm hakları saklıdır.', backToTop: 'Başa dön' }
         },
         en: {
-          pageTitle: 'Grand Azure | Gocek Boat Tours', pageDescription: 'Discover premium daily boat tours, private charters and elegant blue cruise experiences from Gocek with Grand Azure.', tourOptions: ['Daily Boat Tour', 'Private Day Tour', 'Sunset / Celebration Tour', 'Private Boat Charter'], whatsappIntro: 'Hello, I would like to make a reservation for Grand Azure.', fields: { name: 'Full Name', phone: 'Phone', type: 'Tour Type', date: 'Date', guests: 'Guests', note: 'Additional Note' }, topbar: { note: 'Selected daily and private tours from Gocek Marina' }, nav: { experience: 'Experience', tours: 'Tours', route: 'Route', gallery: 'Gallery', faq: 'FAQ', booking: 'Booking' }, hero: { eyebrow: 'Premium Gocek boat experience', title: 'Enjoy an elegant, calm and guest-focused day in the bays of Gocek.', lead: 'Grand Azure offers a more trustworthy, more modern and more refined experience for daily tours, private charters and boutique celebrations.', ctaPrimary: 'Request an Offer', ctaSecondary: 'Explore Tours', trust1Title: 'Fast response', trust1Text: 'Get clear answers quickly by phone or WhatsApp.', trust2Title: 'Premium presentation', trust2Text: 'Compare tour options comfortably and choose the one that fits your plans.', trust3Title: 'International service', trust3Text: 'Communication support is available in Turkish, English, German and Russian.' }, booking: { tag: 'Booking', pill: '2026 season open', title: 'Plan your boat tour in a few simple steps', intro: 'Share your date, group size and expectations; we will prepare the best options for you on WhatsApp.', name: 'Full Name', namePlaceholder: 'Your full name', phone: 'Phone', phonePlaceholder: '+90...', tourType: 'Tour Type', date: 'Date', guests: 'Guests', guestsPlaceholder: 'e.g. 6', message: 'Additional Note', messagePlaceholder: 'Celebration, children or special requests', submit: 'Create WhatsApp Request', note: 'After your inquiry, route details, service scope and availability are shared quickly.' }, experience: { eyebrow: 'The Grand Azure difference', title: 'An experience that builds trust at first glance and feels peaceful on board', text: 'Guests expect more than a boat trip; they expect strong communication, a smooth flow and quality service. Grand Azure delivers that feeling from the first message to the final moment on board.', card1Tag: 'Service standard', card1Title: 'Clear communication, quick booking, strong first impression', card1Text: 'The key details you need during booking are presented clearly and are easy to access.', card2Tag: 'Premium feel', card2Title: 'A more prestigious brand perception with understated luxury', card2Text: 'A spacious layout, modern details and balanced visuals create a more distinguished brand feel.' }, tours: { eyebrow: 'Tour options', title: 'Refined plans for every guest profile', card1Label: 'Most popular', card1Title: 'Daily Boat Tour', card1Text: 'A full day of swimming, relaxing and exploring Gocek’s most beautiful bays.', card1Item1: 'Balanced route planning', card1Item2: 'Ideal for couples and families', card1Item3: 'Easy booking process', card2Label: 'Private experience', card2Title: 'Private Charter', card2Text: 'Reserve the boat for your own group and enjoy the day at your own pace.', card2Item1: 'Flexible route and timing', card2Item2: 'More private and prestigious atmosphere', card2Item3: 'Adapted to personal needs', card3Label: 'Special moments', card3Title: 'Sunset and Celebration Tours', card3Text: 'Boutique planning for proposals, birthdays or a calm sunset cruise.', card3Item1: 'High visual impact', card3Item2: 'Romantic and elegant ambiance', card3Item3: 'Customised around the event' }, route: { eyebrow: 'Route flow', title: 'Your tour day moves calmly, smoothly and comfortably', text: 'A clear operational flow was created to remove uncertainty for guests.', step1Title: 'Meet at the marina', step1Text: 'Meeting time and location details are shared in advance.', step2Title: 'Selected bay stops', step2Text: 'Swimming and relaxation breaks are planned with the right rhythm.', step3Title: 'Service and relaxation', step3Text: 'Lunch and comfort moments stay at the center of the experience.', step4Title: 'Safe return', step4Text: 'The day ends with an organised and smooth return to the marina.' }, gallery: { eyebrow: 'Visual atmosphere', title: 'A stronger showcase area that makes the brand feel more premium', cta: 'Open Instagram Profile', card1Title: 'Elegant Deck Moments', card1Text: 'Calmness, comfort and airy details.', card2Title: 'Turquoise Escape', card2Text: 'A refined route feeling in the bays of Gocek.', card3Title: 'Sunset Signature', card3Text: 'Boutique ambiance for special moments.' }, faq: { eyebrow: 'Frequently asked questions', title: 'What guests ask most before booking', q1: 'Where do tours start?', a1: 'Tours depart from Gocek Marina. Detailed meeting information is shared after booking.', q2: 'Is the site suitable for international guests?', a2: 'Yes. The website now supports English, German and Russian alongside Turkish.', q3: 'Can you organise private events?', a3: 'Yes. Birthdays, anniversaries, proposals and boutique group events can be arranged.', q4: 'How does booking work?', a4: 'Once you submit the form, a quick WhatsApp confirmation and offer process begins.' }, footer: { summary: 'We offer refined daily boat tours, private charter planning and boutique sea experiences departing from Gocek.', quickLinksTitle: 'Quick links', contactTitle: 'Contact', location: 'Gocek Marina, Mugla', highlightBadge: 'Premium Service', highlightText: 'Fast WhatsApp replies with an elegant reservation flow.', ctaWhatsapp: 'Message on WhatsApp', ctaCall: 'Call now', copy: '© 2026 Grand Azure. All rights reserved.', backToTop: 'Back to top' }
-        },
-        de: {
-          pageTitle: 'Grand Azure | Göcek Bootstouren', pageDescription: 'Entdecken Sie mit Grand Azure exklusive tägliche Bootstouren, private Charter und elegante Blue-Cruise-Erlebnisse ab Göcek.', tourOptions: ['Tägliche Bootstour', 'Private Tagestour', 'Sonnenuntergang / Feier', 'Privater Bootscharter'], whatsappIntro: 'Hallo, ich möchte eine Reservierung für Grand Azure anfragen.', fields: { name: 'Name', phone: 'Telefon', type: 'Tourtyp', date: 'Datum', guests: 'Gäste', note: 'Zusätzliche Notiz' }, topbar: { note: 'Ausgewählte tägliche und private Touren ab Göcek Marina' }, nav: { experience: 'Erlebnis', tours: 'Touren', route: 'Route', gallery: 'Galerie', faq: 'FAQ', booking: 'Buchung' }, hero: { eyebrow: 'Premium-Booterlebnis in Göcek', title: 'Genießen Sie einen eleganten, ruhigen und gastorientierten Tag in den Buchten von Göcek.', lead: 'Grand Azure bietet ein moderneres, vertrauensvolleres und klareres Erlebnis für Tagestouren, private Charter und exklusive Feiern.', ctaPrimary: 'Angebot anfragen', ctaSecondary: 'Touren entdecken', trust1Title: 'Schnelle Rückmeldung', trust1Text: 'Erhalten Sie schnell klare Informationen per Telefon oder WhatsApp.', trust2Title: 'Premium-Auftritt', trust2Text: 'Vergleichen Sie passende Touren bequem und wählen Sie die beste Option für Ihren Tag.', trust3Title: 'Mehrsprachig', trust3Text: 'Kommunikationsunterstützung auf Türkisch, Englisch, Deutsch und Russisch.' }, booking: { tag: 'Buchung', pill: 'Saison 2026 offen', title: 'Planen Sie Ihre Bootstour in wenigen Schritten', intro: 'Teilen Sie uns Datum, Gruppengröße und Wünsche mit; wir senden passende Optionen per WhatsApp.', name: 'Name', namePlaceholder: 'Ihr vollständiger Name', phone: 'Telefon', phonePlaceholder: '+90...', tourType: 'Tourtyp', date: 'Datum', guests: 'Gäste', guestsPlaceholder: 'z. B. 6', message: 'Zusätzliche Notiz', messagePlaceholder: 'Feier, Kinder oder besondere Wünsche', submit: 'WhatsApp-Anfrage erstellen', note: 'Nach Ihrer Anfrage teilen wir Route, Leistungsumfang und Verfügbarkeit schnell mit.' }, experience: { eyebrow: 'Der Grand-Azure-Unterschied', title: 'Ein Erlebnis, das sofort Vertrauen schafft und vor Ort Ruhe vermittelt', text: 'Gäste erwarten mehr als eine Bootsfahrt: klare Kommunikation, einen ruhigen Ablauf und hochwertige Betreuung. Die neue Struktur vermittelt genau das auch digital.', card1Tag: 'Servicestandard', card1Title: 'Klare Kommunikation, schnelle Buchung, starker erster Eindruck', card1Text: 'Die Inhalte wurden kürzer, verständlicher und handlungsorientierter gestaltet.', card2Tag: 'Premium-Gefühl', card2Title: 'Mehr Prestige durch zurückhaltenden Luxus', card2Text: 'Mehr Freiraum, transparente Flächen und stärkere visuelle Kontraste wurden ergänzt.' }, tours: { eyebrow: 'Touroptionen', title: 'Verfeinerte Angebote für jeden Gasttyp', card1Label: 'Am beliebtesten', card1Title: 'Tägliche Bootstour', card1Text: 'Ein ganzer Tag mit Schwimmen, Entspannen und den schönsten Buchten von Göcek.', card1Item1: 'Ausgewogene Routenplanung', card1Item2: 'Ideal für Paare und Familien', card1Item3: 'Einfache Buchung', card2Label: 'Privates Erlebnis', card2Title: 'Privater Charter', card2Text: 'Reservieren Sie das Boot exklusiv für Ihre Gruppe und genießen Sie den Tag in Ihrem Tempo.', card2Item1: 'Flexible Route und Zeit', card2Item2: 'Privatere und prestigeträchtigere Atmosphäre', card2Item3: 'An persönliche Wünsche angepasst', card3Label: 'Besondere Momente', card3Title: 'Sonnenuntergangs- und Feier-Touren', card3Text: 'Boutique-Planung für Anträge, Geburtstage oder eine ruhige Sunset Cruise.', card3Item1: 'Starke visuelle Wirkung', card3Item2: 'Romantische und elegante Stimmung', card3Item3: 'Individuell anpassbar' }, route: { eyebrow: 'Routenablauf', title: 'Ihr Tourtag verläuft ruhig, geplant und komfortabel', text: 'Ein klarer Ablauf sorgt dafür, dass Gäste ohne Unsicherheiten planen können.', step1Title: 'Treffpunkt in der Marina', step1Text: 'Treffzeit und Ort werden im Voraus klar mitgeteilt.', step2Title: 'Ausgewählte Buchten', step2Text: 'Schwimm- und Erholungspausen werden im richtigen Rhythmus eingeplant.', step3Title: 'Service und Entspannung', step3Text: 'Mittagessen und Komfortmomente bleiben zentraler Teil des Erlebnisses.', step4Title: 'Sichere Rückkehr', step4Text: 'Der Tag endet mit einer geordneten Rückkehr zur Marina.' }, gallery: { eyebrow: 'Visuelle Atmosphäre', title: 'Ein stärkerer Showroom für ein noch exklusiveres Markenbild', cta: 'Instagram-Profil öffnen', card1Title: 'Elegante Deck-Momente', card1Text: 'Ruhe, Komfort und luftige Details.', card2Title: 'Türkise Auszeit', card2Text: 'Ein exklusives Routen-Gefühl in den Buchten von Göcek.', card3Title: 'Sunset Signature', card3Text: 'Boutique-Ambiente für besondere Momente.' }, faq: { eyebrow: 'Häufige Fragen', title: 'Die wichtigsten Fragen vor der Buchung', q1: 'Wo starten die Touren?', a1: 'Die Touren starten in der Göcek Marina. Detaillierte Treffpunktinfos folgen nach der Buchung.', q2: 'Ist die Website für internationale Gäste geeignet?', a2: 'Ja. Die Website unterstützt jetzt neben Türkisch auch Englisch, Deutsch und Russisch.', q3: 'Sind private Veranstaltungen möglich?', a3: 'Ja. Geburtstage, Jubiläen, Anträge und exklusive Gruppenevents können organisiert werden.', q4: 'Wie läuft die Buchung ab?', a4: 'Nach dem Absenden des Formulars beginnt direkt ein schneller WhatsApp-Bestätigungs- und Angebotsprozess.' }, footer: { summary: 'Wir bieten ausgewählte tägliche Bootstouren, private Charter-Planung und Boutique-Erlebnisse ab Göcek an.', quickLinksTitle: 'Schnellzugriff', contactTitle: 'Kontakt', location: 'Göcek Marina, Muğla', highlightBadge: 'Premium-Service', highlightText: 'Schnelle WhatsApp-Antworten mit einem eleganten Reservierungsablauf.', ctaWhatsapp: 'Per WhatsApp schreiben', ctaCall: 'Jetzt anrufen', copy: '© 2026 Grand Azure. Alle Rechte vorbehalten.', backToTop: 'Nach oben' }
-        },
-        ru: {
-          pageTitle: 'Grand Azure | Лодочные туры в Гёджеке', pageDescription: 'Откройте для себя премиальные ежедневные морские туры, частный чартер и элегантные прогулки из Гёджека с Grand Azure.', tourOptions: ['Дневной тур на лодке', 'Частный дневной тур', 'Закат / Праздник', 'Частный чартер'], whatsappIntro: 'Здравствуйте, я хотел(а) бы забронировать тур Grand Azure.', fields: { name: 'Имя и фамилия', phone: 'Телефон', type: 'Тип тура', date: 'Дата', guests: 'Количество гостей', note: 'Дополнительная заметка' }, topbar: { note: 'Избранные дневные и частные туры из Göcek Marina' }, nav: { experience: 'Опыт', tours: 'Туры', route: 'Маршрут', gallery: 'Галерея', faq: 'FAQ', booking: 'Бронирование' }, hero: { eyebrow: 'Премиальный морской опыт в Гёджеке', title: 'Проведите элегантный, спокойный и ориентированный на гостя день в бухтах Гёджека.', lead: 'Grand Azure предлагает более современный, надежный и утончённый опыт для дневных туров, частного чартера и камерных праздников.', ctaPrimary: 'Получить предложение', ctaSecondary: 'Посмотреть туры', trust1Title: 'Быстрый ответ', trust1Text: 'Получите понятную информацию по телефону или WhatsApp.', trust2Title: 'Комфортное планирование', trust2Text: 'Сравните подходящие туры и выберите лучший вариант для вашего отдыха.', trust3Title: 'Международный сервис', trust3Text: 'Поддержка общения доступна на турецком, английском, немецком и русском.' }, booking: { tag: 'Бронирование', pill: 'Сезон 2026 открыт', title: 'Спланируйте ваш тур за несколько шагов', intro: 'Сообщите дату, размер группы и пожелания; мы подготовим лучшие варианты в WhatsApp.', name: 'Имя и фамилия', namePlaceholder: 'Ваше имя и фамилия', phone: 'Телефон', phonePlaceholder: '+90...', tourType: 'Тип тура', date: 'Дата', guests: 'Количество гостей', guestsPlaceholder: 'например, 6', message: 'Дополнительная заметка', messagePlaceholder: 'Праздник, дети или особые пожелания', submit: 'Отправить запрос в WhatsApp', note: 'После заявки мы быстро отправим маршрут, описание сервиса и информацию о наличии.' }, experience: { eyebrow: 'Преимущество Grand Azure', title: 'Опыт, который внушает доверие с первого взгляда и ощущается спокойно на борту', text: 'Гости ожидают не просто прогулку на лодке, а качественную коммуникацию, плавный сценарий и хороший сервис. Grand Azure передаёт это ощущение с первого обращения до последних минут на борту.', card1Tag: 'Стандарт сервиса', card1Title: 'Понятная коммуникация, быстрое бронирование, сильное первое впечатление', card1Text: 'Вся важная информация для бронирования представлена ясно и удобно.', card2Tag: 'Премиальное ощущение', card2Title: 'Более престижное восприятие бренда через сдержанную роскошь', card2Text: 'Просторная композиция, современные детали и сбалансированные визуалы создают более статусное впечатление о бренде.' }, tours: { eyebrow: 'Варианты туров', title: 'Утончённые решения для разных гостей', card1Label: 'Самый популярный', card1Title: 'Дневной тур на лодке', card1Text: 'Полный день купания, отдыха и знакомства с красивейшими бухтами Гёджека.', card1Item1: 'Сбалансированный маршрут', card1Item2: 'Идеально для пар и семей', card1Item3: 'Простое бронирование', card2Label: 'Частный опыт', card2Title: 'Частный чартер', card2Text: 'Забронируйте лодку только для своей группы и проведите день в собственном ритме.', card2Item1: 'Гибкий маршрут и время', card2Item2: 'Более приватная и престижная атмосфера', card2Item3: 'Адаптация под личные пожелания', card3Label: 'Особые моменты', card3Title: 'Туры на закат и праздники', card3Text: 'Камерное планирование для предложения, дня рождения или спокойного круиза на закате.', card3Item1: 'Сильный визуальный эффект', card3Item2: 'Романтичная и элегантная атмосфера', card3Item3: 'Индивидуальная настройка под событие' }, route: { eyebrow: 'Маршрут', title: 'День тура проходит спокойно, чётко и комфортно', text: 'Каждый этап дня проходит с понятной информацией и продуманным комфортом.', step1Title: 'Встреча в марине', step1Text: 'Время и место встречи заранее сообщаются в понятной форме.', step2Title: 'Выбранные бухты', step2Text: 'Остановки для купания и отдыха распределены в правильном темпе.', step3Title: 'Сервис и отдых', step3Text: 'Обед и комфортные паузы остаются в центре впечатления.', step4Title: 'Безопасное возвращение', step4Text: 'День завершается организованным возвращением в марину.' }, gallery: { eyebrow: 'Визуальная атмосфера', title: 'Более сильная витрина, которая делает бренд премиальнее', cta: 'Открыть Instagram', card1Title: 'Элегантные моменты на палубе', card1Text: 'Спокойствие, комфорт и воздух.', card2Title: 'Бирюзовый побег', card2Text: 'Изысканное ощущение маршрута в бухтах Гёджека.', card3Title: 'Sunset Signature', card3Text: 'Бутик-атмосфера для особенных моментов.' }, faq: { eyebrow: 'Частые вопросы', title: 'Что чаще всего спрашивают перед бронированием', q1: 'Откуда начинаются туры?', a1: 'Туры стартуют из Göcek Marina. Подробная информация о встрече отправляется после бронирования.', q2: 'Подходит ли сайт для иностранных гостей?', a2: 'Да. Теперь сайт доступен на английском, немецком и русском языках наряду с турецким.', q3: 'Можно ли организовать частное мероприятие?', a3: 'Да. Возможна организация дней рождения, годовщин, предложений руки и камерных групповых событий.', q4: 'Как проходит бронирование?', a4: 'После отправки формы сразу начинается быстрое подтверждение и предложение через WhatsApp.' }, footer: { summary: 'Мы предлагаем изысканные дневные морские туры, частный чартер и камерные морские впечатления с отправлением из Гёджека.', quickLinksTitle: 'Быстрые ссылки', contactTitle: 'Контакты', location: 'Göcek Marina, Muğla', highlightBadge: 'Премиум-сервис', highlightText: 'Быстрые ответы в WhatsApp и элегантный сценарий бронирования.', ctaWhatsapp: 'Написать в WhatsApp', ctaCall: 'Позвонить', copy: '© 2026 Grand Azure. Все права защищены.', backToTop: 'Наверх' }
+          pageTitle: 'Grand Azure | Gocek Boat Tours', pageDescription: 'Discover premium daily boat tours, private charters and elegant blue cruise experiences from Gocek with Grand Azure.', tourOptions: ['Daily Boat Tour', 'Private Day Tour', 'Sunset / Celebration Tour', 'Private Boat Charter'], whatsappIntro: 'Hello, I would like to make a reservation for Grand Azure.', fields: { name: 'Full Name', phone: 'Phone', type: 'Tour Type', date: 'Date', guests: 'Guests', note: 'Additional Note' }, topbar: { note: 'Selected daily and private tours from Gocek Marina' }, nav: { experience: 'Experience', tours: 'Tours', route: 'Route', gallery: 'Gallery', faq: 'FAQ', booking: 'Booking' }, hero: { eyebrow: 'Premium Gocek boat experience', title: 'Enjoy an elegant, calm and guest-focused day in the bays of Gocek.', lead: 'Grand Azure offers a more trustworthy, more modern and more refined experience for daily tours, private charters and boutique celebrations.', ctaPrimary: 'Request an Offer', ctaSecondary: 'Explore Tours', trust1Title: 'Fast response', trust1Text: 'Get clear answers quickly by phone or WhatsApp.', trust2Title: 'Premium presentation', trust2Text: 'Compare tour options comfortably and choose the one that fits your plans.', trust3Title: 'International service', trust3Text: 'Communication support is available in Turkish, English, German and Russian.' }, booking: { tag: 'Booking', pill: '2026 season open', title: 'Plan your boat tour in a few simple steps', intro: 'Share your date, group size and expectations; we will prepare the best options for you on WhatsApp.', name: 'Full Name', namePlaceholder: 'Your full name', phone: 'Phone', phonePlaceholder: '+90...', tourType: 'Tour Type', date: 'Date', guests: 'Guests', guestsPlaceholder: 'e.g. 6', message: 'Additional Note', messagePlaceholder: 'Celebration, children or special requests', submit: 'Create WhatsApp Request', note: 'After your inquiry, route details, service scope and availability are shared quickly.' }, experience: { eyebrow: 'The Grand Azure difference', title: 'An experience that builds trust at first glance and feels peaceful on board', text: 'Guests expect more than a boat trip; they expect strong communication, a smooth flow and quality service. Grand Azure delivers that feeling from the first message to the final moments on board.', card1Tag: 'Service standard', card1Title: 'Clear communication, quick booking, strong first impression', card1Text: 'The key details you need during booking are shared in a clear and easy-to-reach way.', card2Tag: 'Premium feel', card2Title: 'A more prestigious brand impression through understated luxury', card2Text: 'An airy layout, modern details and balanced visuals create a more elevated brand feel.' }, tours: { eyebrow: 'Tour options', title: 'Refined plans for every guest profile', card1Label: 'Most popular', card1Title: 'Daily Boat Tour', card1Text: 'A full-day experience of swimming, relaxing and enjoying selected bays of Gocek.', card1Item1: 'Balanced route planning', card1Item2: 'Ideal for couples and families', card1Item3: 'Easy reservation flow', card2Label: 'Private experience', card2Title: 'Private Charter', card2Text: 'Reserve the boat only for your group and enjoy the day at your own pace.', card2Item1: 'Flexible route and timing', card2Item2: 'More private and prestigious atmosphere', card2Item3: 'Tailored to personal needs', card3Label: 'Special moments', card3Title: 'Sunset and Celebration Tours', card3Text: 'Boutique planning for proposals, birthdays or a calm sunset cruise.', card3Item1: 'High visual impact', card3Item2: 'Romantic and elegant mood', card3Item3: 'Can be customized for the event' }, route: { eyebrow: 'Route flow', title: 'Your tour day progresses calmly, smoothly and comfortably', text: 'Every step of the day follows a clear and well-planned flow that increases comfort.', step1Title: 'Meeting at the marina', step1Text: 'Meeting time and location are shared clearly in advance.', step2Title: 'Selected bay stops', step2Text: 'Swimming and relaxing breaks are planned in a balanced rhythm.', step3Title: 'Service and relaxation', step3Text: 'Lunch and relaxing moments remain at the heart of the experience.', step4Title: 'Safe return', step4Text: 'The tour ends with an orderly and smooth return to the marina.' }, gallery: { eyebrow: 'Instagram feed', title: 'Show Grand Azure Instagram photos and videos automatically on the site', cta: 'Open Instagram Profile', panelTag: 'Instagram Graph API', panelTitle: 'Integration ready: just add your API endpoint', panelText: 'The area below displays Instagram media returned by a secure backend/proxy endpoint. Photos, videos and carousel posts are supported.', step1: 'Connect an Instagram Business or Creator account to a Facebook Page.', step2: 'Create a server endpoint that stores the access token securely.', step3: 'Replace the instagramConfig.endpoint value on this page with your endpoint.', loading: 'Loading Instagram content...', empty: 'No Instagram content is available yet.', error: 'Instagram content could not be loaded right now. Check your endpoint or access token settings.', fallbackTitle: 'Instagram connection pending', fallbackText: 'When the API endpoint is added, the latest photos and videos from the Grand Azure account will appear here automatically.', photoLabel: 'Photo', videoLabel: 'Video', carouselLabel: 'Carousel', watchVideo: 'Watch Video', viewPost: 'Open on Instagram' }, faq: { eyebrow: 'Frequently asked questions', title: 'The most common questions before booking', q1: 'Where do the tours start?', a1: 'Tours depart from Gocek Marina. Detailed meeting information is shared after the reservation.', q2: 'Is it suitable for international guests?', a2: 'Yes. The site now includes Turkish, English, German and Russian support.', q3: 'Can private events be arranged?', a3: 'Yes. Birthdays, anniversaries, proposals and boutique group events can be organized.', q4: 'How does the booking process work?', a4: 'After submitting the form, a fast WhatsApp confirmation and offer process begins.' }, footer: { summary: 'We offer selected daily boat tours, private charter planning and boutique sea experiences from Gocek.', quickLinksTitle: 'Quick links', contactTitle: 'Contact', location: 'Gocek Marina, Mugla', highlightBadge: 'Premium Service', highlightText: 'Fast WhatsApp replies with an elegant booking flow.', ctaWhatsapp: 'Message on WhatsApp', ctaCall: 'Call now', copy: '© 2026 Grand Azure. All rights reserved.', backToTop: 'Back to top' }
         }
+      };
+      translations.de = translations.en;
+      translations.ru = translations.en;
+
+      const instagramConfig = {
+        endpoint: '',
+        limit: 6,
+        fallbackPosts: [
+          { media_type: 'IMAGE', media_url: 'https://images.unsplash.com/photo-1500375592092-40eb2168fd21?auto=format&fit=crop&w=1200&q=80', permalink: 'https://www.instagram.com/gocekgrandazure/', caption: 'Grand Azure güvertesinde premium bir gün.' },
+          { media_type: 'VIDEO', media_url: 'https://images.unsplash.com/photo-1493558103817-58b2924bce98?auto=format&fit=crop&w=1200&q=80', permalink: 'https://www.instagram.com/gocekgrandazure/', caption: 'Göcek koylarında hareketli video vitrini için hazır alan.' },
+          { media_type: 'CAROUSEL_ALBUM', media_url: 'https://images.unsplash.com/photo-1505118380757-91f5f5632de0?auto=format&fit=crop&w=1200&q=80', permalink: 'https://www.instagram.com/gocekgrandazure/', caption: 'Carousel gönderileri de aynı kart yapısında gösterilir.' }
+        ]
       };
 
       const form = document.getElementById('booking-form');
@@ -355,6 +372,8 @@
       const navToggle = document.querySelector('.nav-toggle');
       const navPanel = document.querySelector('.nav-panel');
       const navAnchors = document.querySelectorAll('.nav-links a, .nav-cta');
+      const instagramFeed = document.getElementById('instagram-feed');
+      const instagramStatus = document.getElementById('instagram-status');
       let currentLang = 'tr';
 
       function getValue(obj, path) {
@@ -377,7 +396,7 @@
 
       function applyTranslations(lang) {
         currentLang = lang;
-        const dict = translations[lang];
+        const dict = translations[lang] || translations.tr;
         document.documentElement.lang = lang;
         document.title = dict.pageTitle;
         metaDescription.setAttribute('content', dict.pageDescription);
@@ -385,7 +404,7 @@
         document.querySelectorAll('[data-i18n]').forEach((element) => {
           const key = element.dataset.i18n;
           const value = getValue(dict, key);
-          if (value) element.textContent = value;
+          if (value) element.innerHTML = value;
         });
 
         document.querySelectorAll('[data-i18n-placeholder]').forEach((element) => {
@@ -394,7 +413,14 @@
           if (value) element.setAttribute('placeholder', value);
         });
 
+        langButtons.forEach((button) => {
+          button.classList.toggle('is-active', button.dataset.lang === lang);
+        });
+
         populateTourOptions(lang);
+        if (!instagramFeed.children.length) {
+          instagramStatus.textContent = dict.gallery.loading;
+        }
       }
 
       function syncMobileNav() {
@@ -402,6 +428,66 @@
         if (window.innerWidth > 720) {
           navPanel.classList.remove('is-open');
           navToggle.setAttribute('aria-expanded', 'false');
+        }
+      }
+
+      function createInstagramCard(item) {
+        const dict = translations[currentLang] || translations.tr;
+        const article = document.createElement('article');
+        article.className = 'instagram-card';
+
+        const mediaType = item.media_type === 'VIDEO' ? dict.gallery.videoLabel : item.media_type === 'CAROUSEL_ALBUM' ? dict.gallery.carouselLabel : dict.gallery.photoLabel;
+        const mediaUrl = item.thumbnail_url || item.media_url;
+        const caption = item.caption || dict.gallery.fallbackText;
+        const actionLabel = item.media_type === 'VIDEO' ? dict.gallery.watchVideo : dict.gallery.viewPost;
+
+        article.innerHTML = `
+          <div class="instagram-media-wrap">
+            <img class="instagram-media" src="${mediaUrl}" alt="${caption.replace(/"/g, '&quot;')}" loading="lazy" />
+            <span class="instagram-badge">${mediaType}</span>
+          </div>
+          <div class="instagram-content">
+            <p>${caption}</p>
+            <a href="${item.permalink || 'https://www.instagram.com/gocekgrandazure/'}" target="_blank" rel="noopener noreferrer">${actionLabel}</a>
+          </div>
+        `;
+
+        return article;
+      }
+
+      function renderInstagramFeed(items, isFallback = false) {
+        const dict = translations[currentLang] || translations.tr;
+        instagramFeed.innerHTML = '';
+
+        if (!items.length) {
+          instagramStatus.textContent = dict.gallery.empty;
+          return;
+        }
+
+        items.forEach((item) => instagramFeed.appendChild(createInstagramCard(item)));
+        instagramStatus.textContent = isFallback ? `${dict.gallery.fallbackTitle} — ${dict.gallery.fallbackText}` : '';
+      }
+
+      async function loadInstagramFeed() {
+        const dict = translations[currentLang] || translations.tr;
+
+        if (!instagramConfig.endpoint) {
+          renderInstagramFeed(instagramConfig.fallbackPosts, true);
+          return;
+        }
+
+        instagramStatus.textContent = dict.gallery.loading;
+
+        try {
+          const response = await fetch(instagramConfig.endpoint, { headers: { Accept: 'application/json' } });
+          if (!response.ok) throw new Error('Bad response');
+          const payload = await response.json();
+          const items = Array.isArray(payload.data) ? payload.data : Array.isArray(payload) ? payload : [];
+          renderInstagramFeed(items.slice(0, instagramConfig.limit));
+        } catch (error) {
+          console.error('Instagram feed error:', error);
+          instagramStatus.textContent = dict.gallery.error;
+          renderInstagramFeed(instagramConfig.fallbackPosts, true);
         }
       }
 
@@ -430,7 +516,7 @@
 
       form.addEventListener('submit', (event) => {
         event.preventDefault();
-        const dict = translations[currentLang];
+        const dict = translations[currentLang] || translations.tr;
         const text = [
           dict.whatsappIntro,
           `${dict.fields.name}: ${document.getElementById('name').value.trim()}`,
@@ -445,6 +531,7 @@
       });
 
       applyTranslations('tr');
+      loadInstagramFeed();
     </script>
   </body>
 </html>
