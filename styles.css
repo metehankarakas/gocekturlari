@@ -325,26 +325,83 @@ h1, h2 { font-family: 'Playfair Display', serif; }
 .faq-item { padding: 1.5rem; }
 
 .site-footer {
-  background: #08131f;
+  background:
+    radial-gradient(circle at top, rgba(205, 168, 97, 0.18), transparent 30%),
+    linear-gradient(180deg, #08131f 0%, #050c15 100%);
   color: rgba(255,255,255,0.84);
   margin-top: 2rem;
   border-top: 1px solid rgba(255,255,255,0.08);
 }
+.footer-shell {
+  padding: 2rem 0 1.5rem;
+}
 .footer-grid {
   display: grid;
   grid-template-columns: 1.4fr 0.8fr 0.8fr;
-  gap: 2rem;
-  padding: 3rem 0 2rem;
+  gap: 1.3rem;
+  padding-bottom: 1.5rem;
+}
+.footer-card {
+  padding: 1.4rem;
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 28px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.03));
+  box-shadow: 0 20px 50px rgba(0,0,0,0.18);
+  backdrop-filter: blur(14px);
+}
+.footer-card-brand {
+  gap: 1rem;
+  display: grid;
 }
 .footer-brand {
   color: white;
-  margin-bottom: 1rem;
+  margin-bottom: 0.25rem;
 }
 .footer-brand-block { max-width: 34rem; }
 .footer-text {
   color: rgba(255,255,255,0.72);
   line-height: 1.8;
   margin: 0;
+}
+.footer-highlight {
+  display: grid;
+  gap: 0.45rem;
+  padding: 1rem 1.1rem;
+  border-radius: 22px;
+  background: linear-gradient(135deg, rgba(255,255,255,0.09), rgba(205, 168, 97, 0.14));
+  border: 1px solid rgba(255,255,255,0.08);
+}
+.footer-highlight-badge {
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.62);
+}
+.footer-cta-row {
+  display: flex;
+  gap: 0.85rem;
+  flex-wrap: wrap;
+}
+.footer-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.95rem 1.2rem;
+  border-radius: 999px;
+  font-weight: 700;
+  transition: transform 180ms ease, background 180ms ease, color 180ms ease;
+}
+.footer-cta:hover {
+  transform: translateY(-1px);
+}
+.footer-cta-primary {
+  background: linear-gradient(135deg, #d7b16a, #f3dfb0);
+  color: #08131f;
+}
+.footer-cta-secondary {
+  background: rgba(255,255,255,0.08);
+  color: white;
+  border: 1px solid rgba(255,255,255,0.1);
 }
 .footer-title {
   color: white;
@@ -361,6 +418,14 @@ h1, h2 { font-family: 'Playfair Display', serif; }
 .footer-links a, .footer-links span {
   color: rgba(255,255,255,0.76);
 }
+.footer-links-quick a,
+.footer-contact a,
+.footer-contact span {
+  padding: 0.85rem 1rem;
+  border-radius: 18px;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.05);
+}
 .footer-links a:hover, .footer-bottom a:hover {
   color: white;
 }
@@ -368,7 +433,7 @@ h1, h2 { font-family: 'Playfair Display', serif; }
   display: flex;
   justify-content: space-between;
   gap: 1rem;
-  padding: 1.25rem 0 2rem;
+  padding: 1.25rem 0 0;
   border-top: 1px solid rgba(255,255,255,0.08);
   align-items: center;
   flex-wrap: wrap;
@@ -498,5 +563,39 @@ h1, h2 { font-family: 'Playfair Display', serif; }
   }
   .gallery-card {
     min-height: 260px;
+  }
+  .footer-shell {
+    padding: 1.25rem 0 1rem;
+  }
+  .footer-grid {
+    gap: 1rem;
+    padding-bottom: 1.2rem;
+  }
+  .footer-card {
+    padding: 1.1rem;
+    border-radius: 24px;
+  }
+  .footer-highlight {
+    padding: 0.95rem;
+    border-radius: 20px;
+  }
+  .footer-cta-row {
+    flex-direction: column;
+  }
+  .footer-cta {
+    width: 100%;
+  }
+  .footer-links-quick {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .footer-links-quick a,
+  .footer-contact a,
+  .footer-contact span {
+    text-align: center;
+  }
+  .footer-bottom {
+    flex-direction: column-reverse;
+    text-align: center;
+    padding-top: 1rem;
   }
 }
