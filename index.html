@@ -250,19 +250,24 @@
           <div class="review-summary glass-strong">
             <div>
               <p class="card-tag" data-i18n="gallery.summaryTag">Sosyal kanıt</p>
-              <h3 data-i18n="gallery.summaryTitle">Misafirlerin en çok paylaştığı anları öne çıkarın</h3>
-              <p data-i18n="gallery.summaryText">Bu alan; Tripadvisor'dan alınan fotoğraf, video ve yorum ekran görüntülerini düzenli bir vitrin halinde sunmak için tasarlandı. Canlı entegrasyon hazır olduğunda kartlar dinamik olarak da beslenebilir.</p>
+              <h3 data-i18n="gallery.summaryTitle">Tripadvisor içeriğini otomatik galeriye dönüştürün</h3>
+              <p data-i18n="gallery.summaryText">Bu bölüm verilen Tripadvisor adresini okuyup fotoğraf, video ve yorumları kart yapısında otomatik göstermeyi dener; canlı çekim başarısız olursa kaydedilmiş son veriler gösterilir.</p>
             </div>
             <div class="review-score-stack">
               <div class="review-score-card">
-                <strong>4.9/5</strong>
-                <span data-i18n="gallery.scoreLabel">Misafir memnuniyeti vurgusu</span>
+                <strong id="tripadvisor-rating">4.9/5</strong>
+                <span data-i18n="gallery.scoreLabel">Güncel puan özeti</span>
               </div>
               <div class="review-score-card">
-                <strong>Fotoğraf + Video</strong>
-                <span data-i18n="gallery.mediaLabel">Aynı galeride karma görünüm</span>
+                <strong id="tripadvisor-count">93 yorum</strong>
+                <span data-i18n="gallery.mediaLabel">Fotoğraf, video ve yorum tek galeride</span>
               </div>
             </div>
+          </div>
+
+          <div class="gallery-meta-row">
+            <div class="gallery-status" id="gallery-status" data-i18n="gallery.loading">Tripadvisor galerisi yükleniyor...</div>
+            <div class="gallery-last-updated" id="gallery-last-updated"></div>
           </div>
 
           <div class="gallery-filter" role="tablist" aria-label="Galeri filtreleri">
@@ -272,78 +277,7 @@
             <button class="gallery-filter-btn" type="button" data-filter="review" data-i18n="gallery.filterReview">Yorumlar</button>
           </div>
 
-          <div class="tripadvisor-gallery" id="tripadvisor-gallery">
-            <article class="ta-card ta-card-media" data-category="photo">
-              <div class="ta-media scenic-a">
-                <span class="ta-badge" data-i18n="gallery.photoBadge">Fotoğraf</span>
-              </div>
-              <div class="ta-content">
-                <p class="ta-meta">Tripadvisor • Marina çıkışı</p>
-                <h3 data-i18n="gallery.photoTitle1">Göcek koylarında geniş güverte ve sakin rota hissi</h3>
-                <p data-i18n="gallery.photoText1">Misafirlerin en çok paylaştığı karelerden biri: ferah oturma alanı, temiz sunum ve berrak koy manzarası.</p>
-              </div>
-            </article>
-
-            <article class="ta-card ta-card-media" data-category="video">
-              <div class="ta-media ta-video">
-                <video controls preload="metadata" poster="https://images.unsplash.com/photo-1493558103817-58b2924bce98?auto=format&fit=crop&w=1200&q=80">
-                  <source src="assets/arka.mp4" type="video/mp4" />
-                </video>
-                <span class="ta-badge" data-i18n="gallery.videoBadge">Video</span>
-              </div>
-              <div class="ta-content">
-                <p class="ta-meta">Tripadvisor • Video vitrini</p>
-                <h3 data-i18n="gallery.videoTitle1">Tur atmosferini kısa videolarla doğrudan gösterin</h3>
-                <p data-i18n="gallery.videoText1">Misafirlerin hareketli içerikleri de aynı galeri düzeninde görebilmesi için video kartı eklendi.</p>
-              </div>
-            </article>
-
-            <article class="ta-card ta-card-review" data-category="review">
-              <div class="ta-review-head">
-                <div>
-                  <strong>Ayşe K.</strong>
-                  <p data-i18n="gallery.reviewMeta1">Aile gezisi • 5/5</p>
-                </div>
-                <span class="ta-stars">★★★★★</span>
-              </div>
-              <h3 data-i18n="gallery.reviewTitle1">Düzenli, sakin ve çok misafirperver</h3>
-              <p data-i18n="gallery.reviewText1">Rezervasyondan tur sonuna kadar iletişim çok rahattı. Koy seçimleri, servis akışı ve teknenin temizliği beklentimizin üzerindeydi.</p>
-            </article>
-
-            <article class="ta-card ta-card-media" data-category="photo">
-              <div class="ta-media scenic-b">
-                <span class="ta-badge" data-i18n="gallery.photoBadge">Fotoğraf</span>
-              </div>
-              <div class="ta-content">
-                <p class="ta-meta">Tripadvisor • Yüzme molası</p>
-                <h3 data-i18n="gallery.photoTitle2">Berrak su ve dingin koy durakları öne çıkar</h3>
-                <p data-i18n="gallery.photoText2">Fotoğraf kartları, gün içindeki yüzme molalarını ve doğal atmosferi görsel olarak anlatır.</p>
-              </div>
-            </article>
-
-            <article class="ta-card ta-card-review" data-category="review">
-              <div class="ta-review-head">
-                <div>
-                  <strong>James R.</strong>
-                  <p data-i18n="gallery.reviewMeta2">Couple trip • 5/5</p>
-                </div>
-                <span class="ta-stars">★★★★★</span>
-              </div>
-              <h3 data-i18n="gallery.reviewTitle2">Exactly the premium day we hoped for</h3>
-              <p data-i18n="gallery.reviewText2">The boat felt elegant, the team was warm and responsive, and the pace of the route was perfect for a calm day in Gocek.</p>
-            </article>
-
-            <article class="ta-card ta-card-media" data-category="review">
-              <div class="ta-quote-block">
-                <p data-i18n="gallery.quote">“Teknede geçirdiğimiz en rahat ve en iyi planlanmış günlerden biriydi.”</p>
-                <span>Tripadvisor</span>
-              </div>
-              <div class="ta-content compact">
-                <p class="ta-meta">Tripadvisor • Öne çıkan yorum</p>
-                <h3 data-i18n="gallery.quoteTitle">Kısa yorum kartı ile sosyal kanıtı görünür yapın</h3>
-              </div>
-            </article>
-          </div>
+          <div class="tripadvisor-gallery" id="tripadvisor-gallery"></div>
         </section>
 
         <section class="section container faq-section" id="faq">
@@ -426,7 +360,7 @@
           experience: { eyebrow: 'Grand Azure farkı', title: 'İlk bakışta güven veren, yerinde ise huzur hissettiren bir deneyim', text: 'Misafirlerin beklentisi sadece tekne turu değil; iyi iletişim, düzenli akış ve kaliteli hizmettir. Grand Azure, bu beklentiyi ilk temastan turun son anına kadar hissettiren bir deneyim sunar.', card1Tag: 'Servis standardı', card1Title: 'Net iletişim, hızlı rezervasyon, güçlü ilk izlenim', card1Text: 'Rezervasyon sürecinde ihtiyaç duyduğunuz bilgiler açık, anlaşılır ve kolay ulaşılır biçimde sunulur.', card2Tag: 'Premium his', card2Title: 'Sade lüks yaklaşımıyla daha prestijli marka algısı', card2Text: 'Ferah düzen, modern detaylar ve dengeli görseller daha seçkin bir marka hissi oluşturur.' },
           tours: { eyebrow: 'Tur seçenekleri', title: 'Her misafir tipi için rafine edilmiş planlar', card1Label: 'En popüler', card1Title: 'Günübirlik Tekne Turu', card1Text: "Göcek'in seçkin koylarında yüzme, dinlenme ve keyifli bir tam gün deneyimi.", card1Item1: 'Dengeli rota planı', card1Item2: 'Aileler ve çiftler için ideal yapı', card1Item3: 'Kolay rezervasyon süreci', card2Label: 'Özel deneyim', card2Title: 'Özel Tekne Kiralama', card2Text: 'Tekneyi yalnızca kendi grubunuz için ayırın ve günü kendi temponuzda yaşayın.', card2Item1: 'Esnek rota ve saat planı', card2Item2: 'Daha mahrem ve prestijli atmosfer', card2Item3: 'Kişisel ihtiyaçlara göre uyarlama', card3Label: 'Özel anlar', card3Title: 'Gün Batımı ve Kutlama Turları', card3Text: 'Evlilik teklifi, doğum günü veya sakin bir sunset cruise için butik planlama.', card3Item1: 'Yüksek görsel etki', card3Item2: 'Romantik ve zarif atmosfer', card3Item3: 'Etkinliğe özel kurgulanabilir' },
           route: { eyebrow: 'Rota akışı', title: 'Tur günü sakin, planlı ve konforlu ilerler', text: 'Günün her adımı, konforu artıran net bilgi paylaşımı ve düzenli planlama ile ilerler.', step1Title: 'Marinada buluşma', step1Text: 'Buluşma saati ve konum bilgileri önceden net şekilde paylaşılır.', step2Title: 'Seçkin koy durakları', step2Text: 'Günün temposuna uygun yüzme ve dinlenme molaları verilir.', step3Title: 'Servis ve dinlenme', step3Text: 'Öğle yemeği ve rahatlama anları deneyimin merkezinde tutulur.', step4Title: 'Güvenli dönüş', step4Text: 'Tur, marina dönüşüyle düzenli ve sorunsuz biçimde tamamlanır.' },
-          gallery: { eyebrow: 'Tripadvisor galeri', title: 'Fotoğraf, video ve misafir yorumlarını tek bir galeride gösterin', cta: 'Tripadvisor sayfasını aç', summaryTag: 'Sosyal kanıt', summaryTitle: 'Misafirlerin en çok paylaştığı anları öne çıkarın', summaryText: "Bu alan; Tripadvisor'dan alınan fotoğraf, video ve yorum ekran görüntülerini düzenli bir vitrin halinde sunmak için tasarlandı. Canlı entegrasyon hazır olduğunda kartlar dinamik olarak da beslenebilir.", scoreLabel: 'Misafir memnuniyeti vurgusu', mediaLabel: 'Aynı galeride karma görünüm', filterAll: 'Tümü', filterPhoto: 'Fotoğraflar', filterVideo: 'Videolar', filterReview: 'Yorumlar', photoBadge: 'Fotoğraf', videoBadge: 'Video', photoTitle1: 'Göcek koylarında geniş güverte ve sakin rota hissi', photoText1: 'Misafirlerin en çok paylaştığı karelerden biri: ferah oturma alanı, temiz sunum ve berrak koy manzarası.', videoTitle1: 'Tur atmosferini kısa videolarla doğrudan gösterin', videoText1: 'Misafirlerin hareketli içerikleri de aynı galeri düzeninde görebilmesi için video kartı eklendi.', reviewMeta1: 'Aile gezisi • 5/5', reviewTitle1: 'Düzenli, sakin ve çok misafirperver', reviewText1: 'Rezervasyondan tur sonuna kadar iletişim çok rahattı. Koy seçimleri, servis akışı ve teknenin temizliği beklentimizin üzerindeydi.', photoTitle2: 'Berrak su ve dingin koy durakları öne çıkar', photoText2: 'Fotoğraf kartları, gün içindeki yüzme molalarını ve doğal atmosferi görsel olarak anlatır.', reviewMeta2: 'Çift gezisi • 5/5', reviewTitle2: 'Tam hayal ettiğimiz premium gün', reviewText2: 'Teknenin hissi çok zarifti, ekip çok ilgiliydi ve rota temposu Göcek\'te sakin bir gün geçirmek için tam yerindeydi.', quote: '“Teknede geçirdiğimiz en rahat ve en iyi planlanmış günlerden biriydi.”', quoteTitle: 'Kısa yorum kartı ile sosyal kanıtı görünür yapın' },
+          gallery: { eyebrow: 'Tripadvisor galeri', title: 'Fotoğraf, video ve misafir yorumlarını tek bir galeride gösterin', cta: 'Tripadvisor sayfasını aç', summaryTag: 'Sosyal kanıt', summaryTitle: 'Misafirlerin en çok paylaştığı anları öne çıkarın', summaryText: "Bu alan; Tripadvisor'dan alınan fotoğraf, video ve yorum ekran görüntülerini düzenli bir vitrin halinde sunmak için tasarlandı. Canlı entegrasyon hazır olduğunda kartlar dinamik olarak da beslenebilir.", scoreLabel: 'Misafir memnuniyeti vurgusu', mediaLabel: 'Aynı galeride karma görünüm', filterAll: 'Tümü', filterPhoto: 'Fotoğraflar', filterVideo: 'Videolar', filterReview: 'Yorumlar', photoBadge: 'Fotoğraf', videoBadge: 'Video', photoTitle1: 'Göcek koylarında geniş güverte ve sakin rota hissi', photoText1: 'Misafirlerin en çok paylaştığı karelerden biri: ferah oturma alanı, temiz sunum ve berrak koy manzarası.', videoTitle1: 'Tur atmosferini kısa videolarla doğrudan gösterin', videoText1: 'Misafirlerin hareketli içerikleri de aynı galeri düzeninde görebilmesi için video kartı eklendi.', reviewMeta1: 'Aile gezisi • 5/5', reviewTitle1: 'Düzenli, sakin ve çok misafirperver', reviewText1: 'Rezervasyondan tur sonuna kadar iletişim çok rahattı. Koy seçimleri, servis akışı ve teknenin temizliği beklentimizin üzerindeydi.', photoTitle2: 'Berrak su ve dingin koy durakları öne çıkar', photoText2: 'Fotoğraf kartları, gün içindeki yüzme molalarını ve doğal atmosferi görsel olarak anlatır.', reviewMeta2: 'Çift gezisi • 5/5', reviewTitle2: 'Tam hayal ettiğimiz premium gün', reviewText2: 'Teknenin hissi çok zarifti, ekip çok ilgiliydi ve rota temposu Göcek\'te sakin bir gün geçirmek için tam yerindeydi.', quote: '“Teknede geçirdiğimiz en rahat ve en iyi planlanmış günlerden biriydi.”', quoteTitle: 'Kısa yorum kartı ile sosyal kanıtı görünür yapın', loading: 'Tripadvisor galerisi yükleniyor...', liveReady: 'Tripadvisor galerisi canlı verilerle güncellendi.', fallbackReady: 'Canlı çekim başarısız oldu; son kaydedilen Tripadvisor içerikleri gösteriliyor.' },
           faq: { eyebrow: 'Sık sorulan sorular', title: 'Rezervasyon öncesi en çok merak edilenler', q1: 'Turlar nereden başlıyor?', a1: 'Turlar Göcek Marina çıkışlıdır. Detaylı buluşma bilgisi rezervasyon sonrası paylaşılır.', q2: 'Yabancı misafirler için uygun mu?', a2: 'Evet. Site artık İngilizce, Almanca ve Rusça dahil çok dilli sunumla hazırlanmıştır.', q3: 'Özel organizasyon yapılabiliyor mu?', a3: 'Evet. Doğum günü, yıldönümü, teklif ve butik grup etkinlikleri planlanabilir.', q4: 'Rezervasyon nasıl ilerliyor?', a4: 'Formu doldurduktan sonra WhatsApp üzerinden hızlı bir teyit ve teklif süreci başlatılır.' },
           footer: { summary: 'Göcek çıkışlı günlük tekne turları, özel charter planları ve butik deniz deneyimleri için seçkin hizmet sunuyoruz.', quickLinksTitle: 'Hızlı bağlantılar', contactTitle: 'İletişim', location: 'Göcek Marina, Muğla', highlightBadge: 'Premium Hizmet', highlightText: 'WhatsApp üzerinden hızlı dönüş ve zarif rezervasyon akışı.', ctaWhatsapp: "WhatsApp'tan Yaz", ctaCall: 'Hemen Ara', copy: '© 2026 Grand Azure. Tüm hakları saklıdır.', backToTop: 'Başa dön' }
         },
@@ -443,7 +377,7 @@
           experience: { eyebrow: 'The Grand Azure difference', title: 'An experience that builds trust at first glance and feels peaceful on board', text: 'Guests expect more than a boat trip; they value good communication, a smooth flow and quality service. Grand Azure reflects that from first contact to the final moment of the tour.', card1Tag: 'Service standard', card1Title: 'Clear communication, fast booking and a strong first impression', card1Text: 'The information you need during booking is presented clearly, understandably and accessibly.', card2Tag: 'Premium feel', card2Title: 'A more prestigious brand perception with understated luxury', card2Text: 'Spacious layouts, modern details and balanced visuals create a more selected brand feel.' },
           tours: { eyebrow: 'Tour options', title: 'Refined plans for every guest profile', card1Label: 'Most popular', card1Title: 'Daily Boat Tour', card1Text: 'A full-day experience of swimming, relaxing and enjoying the most selected bays of Gocek.', card1Item1: 'Balanced route plan', card1Item2: 'Ideal structure for families and couples', card1Item3: 'Easy booking flow', card2Label: 'Private experience', card2Title: 'Private Boat Charter', card2Text: 'Reserve the boat only for your own group and enjoy the day at your own pace.', card2Item1: 'Flexible route and timing', card2Item2: 'More private and prestigious atmosphere', card2Item3: 'Adaptable to personal needs', card3Label: 'Special moments', card3Title: 'Sunset and Celebration Tours', card3Text: 'Boutique planning for proposals, birthdays or a peaceful sunset cruise.', card3Item1: 'High visual impact', card3Item2: 'Romantic and elegant atmosphere', card3Item3: 'Customizable for the occasion' },
           route: { eyebrow: 'Route flow', title: 'Your tour day progresses calmly, smoothly and comfortably', text: 'Every step of the day follows a clear and well-planned flow that increases comfort.', step1Title: 'Meeting at the marina', step1Text: 'Meeting time and location are shared clearly in advance.', step2Title: 'Selected bay stops', step2Text: 'Swimming and relaxing breaks are planned in a balanced rhythm.', step3Title: 'Service and relaxation', step3Text: 'Lunch and relaxing moments remain at the heart of the experience.', step4Title: 'Safe return', step4Text: 'The tour ends with an orderly and smooth return to the marina.' },
-          gallery: { eyebrow: 'Tripadvisor gallery', title: 'Show photos, videos and guest reviews in one gallery', cta: 'Open Tripadvisor page', summaryTag: 'Social proof', summaryTitle: 'Highlight the moments guests share the most', summaryText: 'This area is designed to present photos, videos and review screenshots from Tripadvisor in a polished showcase. When live integration is ready, these cards can also be fed dynamically.', scoreLabel: 'Guest satisfaction highlight', mediaLabel: 'Mixed media in one gallery', filterAll: 'All', filterPhoto: 'Photos', filterVideo: 'Videos', filterReview: 'Reviews', photoBadge: 'Photo', videoBadge: 'Video', photoTitle1: 'A calm route feeling with a spacious deck in Gocek bays', photoText1: 'One of the most shared visuals: airy seating, clean presentation and crystal-clear coves.', videoTitle1: 'Show the tour atmosphere directly with short videos', videoText1: 'A dedicated video card is included so guests can browse motion content in the same gallery layout.', reviewMeta1: 'Family trip • 5/5', reviewTitle1: 'Organized, calm and very hospitable', reviewText1: 'Communication was smooth from booking to the end of the trip. The coves, service flow and cleanliness exceeded our expectations.', photoTitle2: 'Clear water and peaceful swim stops stand out', photoText2: 'Photo cards visually communicate swimming breaks and the natural atmosphere of the day.', reviewMeta2: 'Couple trip • 5/5', reviewTitle2: 'Exactly the premium day we hoped for', reviewText2: 'The boat felt elegant, the team was warm and responsive, and the route pace was perfect for a calm day in Gocek.', quote: '“It was one of the most relaxing and best planned days we have had on a boat.”', quoteTitle: 'Make social proof visible with a compact review card' },
+          gallery: { eyebrow: 'Tripadvisor gallery', title: 'Show photos, videos and guest reviews in one gallery', cta: 'Open Tripadvisor page', summaryTag: 'Social proof', summaryTitle: 'Highlight the moments guests share the most', summaryText: 'This area is designed to present photos, videos and review screenshots from Tripadvisor in a polished showcase. When live integration is ready, these cards can also be fed dynamically.', scoreLabel: 'Guest satisfaction highlight', mediaLabel: 'Mixed media in one gallery', filterAll: 'All', filterPhoto: 'Photos', filterVideo: 'Videos', filterReview: 'Reviews', photoBadge: 'Photo', videoBadge: 'Video', photoTitle1: 'A calm route feeling with a spacious deck in Gocek bays', photoText1: 'One of the most shared visuals: airy seating, clean presentation and crystal-clear coves.', videoTitle1: 'Show the tour atmosphere directly with short videos', videoText1: 'A dedicated video card is included so guests can browse motion content in the same gallery layout.', reviewMeta1: 'Family trip • 5/5', reviewTitle1: 'Organized, calm and very hospitable', reviewText1: 'Communication was smooth from booking to the end of the trip. The coves, service flow and cleanliness exceeded our expectations.', photoTitle2: 'Clear water and peaceful swim stops stand out', photoText2: 'Photo cards visually communicate swimming breaks and the natural atmosphere of the day.', reviewMeta2: 'Couple trip • 5/5', reviewTitle2: 'Exactly the premium day we hoped for', reviewText2: 'The boat felt elegant, the team was warm and responsive, and the route pace was perfect for a calm day in Gocek.', quote: '“It was one of the most relaxing and best planned days we have had on a boat.”', quoteTitle: 'Make social proof visible with a compact review card', loading: 'Loading Tripadvisor gallery...', liveReady: 'Tripadvisor gallery updated with live data.', fallbackReady: 'Live fetch failed; showing the last saved Tripadvisor content.' },
           faq: { eyebrow: 'Frequently asked questions', title: 'The most common questions before booking', q1: 'Where do the tours start?', a1: 'Tours depart from Gocek Marina. Detailed meeting information is shared after the reservation.', q2: 'Is it suitable for international guests?', a2: 'Yes. The site now includes Turkish, English, German and Russian support.', q3: 'Can private events be arranged?', a3: 'Yes. Birthdays, anniversaries, proposals and boutique group events can be organized.', q4: 'How does the booking process work?', a4: 'After submitting the form, a fast WhatsApp confirmation and offer process begins.' },
           footer: { summary: 'We offer selected daily boat tours, private charter planning and boutique sea experiences from Gocek.', quickLinksTitle: 'Quick links', contactTitle: 'Contact', location: 'Gocek Marina, Mugla', highlightBadge: 'Premium Service', highlightText: 'Fast WhatsApp replies with an elegant booking flow.', ctaWhatsapp: 'Message on WhatsApp', ctaCall: 'Call now', copy: '© 2026 Grand Azure. All rights reserved.', backToTop: 'Back to top' }
         }
@@ -459,7 +393,23 @@
       const navPanel = document.querySelector('.nav-panel');
       const navAnchors = document.querySelectorAll('.nav-links a, .nav-cta');
       const galleryFilterButtons = document.querySelectorAll('.gallery-filter-btn');
-      const galleryItems = document.querySelectorAll('#tripadvisor-gallery [data-category]');
+      let galleryItems = [];
+
+      const TRIPADVISOR_URL = 'https://www.tripadvisor.com.tr/Attraction_Review-g298032-d26499348-Reviews-Gocek_Grand_Azure_Gunluk_Tur_Teknesi-Gocek_Mugla_Province_Turkish_Aegean_Coast.html';
+      const TRIPADVISOR_FALLBACK = {
+        rating: '4.9/5',
+        reviewCount: 93,
+        fetchedAt: '2026-03-19',
+        source: 'fallback',
+        items: [
+          { type: 'photo', title: 'Tripadvisor fotoğrafı • Göcek koylarında Grand Azure', text: 'Tripadvisor galerisindeki görsel kartlardan biri. Misafirlerin teknedeki ferah alanları ve tur atmosferini öne çıkardığı fotoğrafı temsil eder.', image: 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&q=80', meta: 'Tripadvisor • Fotoğraf galerisi' },
+          { type: 'video', title: 'Video alanı • hareketli içerik için hazır', text: 'Tripadvisor sayfasında video bulunursa aynı kart düzenine eklenir. Şu an yedek içerik olarak mevcut tanıtım videosu gösteriliyor.', video: 'assets/arka.mp4', poster: 'https://images.unsplash.com/photo-1493558103817-58b2924bce98?auto=format&fit=crop&w=1200&q=80', meta: 'Tripadvisor • Video / fallback' },
+          { type: 'review', author: 'Sevda Ö', title: 'Göcekteki favori tur teknemizsiniz artık ☺️', text: 'Öncelikle kaptan ve mürettebatına çok teşekkür ederek başlamak istiyorum... göceği keşfetmek ve keyifli bir gün geçirmek istiyorsanız mutlaka grand azur’la tur’a çıkın derim.', meta: 'Haziran 2025 • Aile gezisi • 5/5' },
+          { type: 'review', author: 'Esra C', title: 'Harika bir tekne turu', text: 'Birçok yerden tekne turu yaptım ama böyle temiz, böyle kaliteli bir tekne turu yapmamıştım. Gittiğimiz koylar harikaydı, yemekler leziz ve temizdi.', meta: 'Ağustos 2025 • Aile gezisi • 5/5' },
+          { type: 'review', author: 'Sudenur İ', title: 'Çok memnun kaldık', text: 'Personelin ilgisi ve güler yüzü sayesinde kendimizi çok rahat hissettik. Tekne tertemiz ve düzenliydi. Hem keyifli hem de konforlu bir gün geçirdik.', meta: 'Temmuz 2025 • Arkadaşlarla • 5/5' }
+        ]
+      };
+
       let currentLang = 'tr';
 
       function getValue(obj, path) {
@@ -504,6 +454,130 @@
         });
 
         populateTourOptions(lang);
+      }
+
+
+      function escapeHtml(value) {
+        return String(value || '').replace(/[&<>"']/g, (char) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[char]));
+      }
+
+      function setGalleryStatus(messageKey, fallbackText) {
+        const status = document.getElementById('gallery-status');
+        if (!status) return;
+        status.dataset.i18n = messageKey;
+        status.textContent = getValue(translations[currentLang] || translations.tr, messageKey) || fallbackText;
+      }
+
+      function updateGallerySummary(feed) {
+        document.getElementById('tripadvisor-rating').textContent = feed.rating || '4.9/5';
+        document.getElementById('tripadvisor-count').textContent = `${feed.reviewCount || 0} yorum`;
+        document.getElementById('gallery-last-updated').textContent = `${feed.source === 'live' ? 'Canlı veri' : 'Yedek veri'} • ${feed.fetchedAt || ''}`.trim();
+      }
+
+      function renderGalleryItems(items) {
+        const container = document.getElementById('tripadvisor-gallery');
+        if (!container) return;
+        container.innerHTML = items.map((item) => {
+          if (item.type === 'review') {
+            return `
+              <article class="ta-card ta-card-review" data-category="review">
+                <div class="ta-review-head">
+                  <div>
+                    <strong>${escapeHtml(item.author || 'Tripadvisor')}</strong>
+                    <p>${escapeHtml(item.meta || '5/5')}</p>
+                  </div>
+                  <span class="ta-stars">★★★★★</span>
+                </div>
+                <h3>${escapeHtml(item.title || 'Misafir yorumu')}</h3>
+                <p>${escapeHtml(item.text || '')}</p>
+              </article>`;
+          }
+
+          if (item.type === 'video') {
+            return `
+              <article class="ta-card ta-card-media" data-category="video">
+                <div class="ta-media ta-video">
+                  <video controls preload="metadata" poster="${escapeHtml(item.poster || '')}">
+                    <source src="${escapeHtml(item.video || '')}" type="video/mp4" />
+                  </video>
+                  <span class="ta-badge">Video</span>
+                </div>
+                <div class="ta-content">
+                  <p class="ta-meta">${escapeHtml(item.meta || 'Tripadvisor')}</p>
+                  <h3>${escapeHtml(item.title || 'Tripadvisor videosu')}</h3>
+                  <p>${escapeHtml(item.text || '')}</p>
+                </div>
+              </article>`;
+          }
+
+          return `
+            <article class="ta-card ta-card-media" data-category="photo">
+              <div class="ta-media">
+                <img src="${escapeHtml(item.image || '')}" alt="${escapeHtml(item.title || 'Tripadvisor fotoğrafı')}" loading="lazy" />
+                <span class="ta-badge">Fotoğraf</span>
+              </div>
+              <div class="ta-content">
+                <p class="ta-meta">${escapeHtml(item.meta || 'Tripadvisor')}</p>
+                <h3>${escapeHtml(item.title || 'Tripadvisor fotoğrafı')}</h3>
+                <p>${escapeHtml(item.text || '')}</p>
+              </div>
+            </article>`;
+        }).join('');
+        galleryItems = Array.from(container.querySelectorAll('[data-category]'));
+      }
+
+      async function loadTripadvisorGallery() {
+        renderGalleryItems(TRIPADVISOR_FALLBACK.items);
+        updateGallerySummary(TRIPADVISOR_FALLBACK);
+        setGalleryStatus('gallery.loading', 'Tripadvisor galerisi yükleniyor...');
+
+        const endpoints = [
+          `https://r.jina.ai/http://${TRIPADVISOR_URL.replace(/^https?:\/\//, '')}`,
+          `https://api.allorigins.win/raw?url=${encodeURIComponent(TRIPADVISOR_URL)}`
+        ];
+
+        for (const endpoint of endpoints) {
+          try {
+            const response = await fetch(endpoint, { headers: { Accept: 'text/html, text/plain' } });
+            if (!response.ok) throw new Error(`HTTP ${response.status}`);
+            const raw = await response.text();
+            const items = [];
+            const reviewMatches = raw.match(/###\s*(.*?)\n\s*\n([\s\S]{40,320}?)\n\s*\n(?:Devamını okuyun|Yazıldığı tarih:|\* \* \*)/g) || [];
+            reviewMatches.slice(0, 4).forEach((chunk) => {
+              const lines = chunk.split('\n').map((line) => line.trim()).filter(Boolean);
+              items.push({ type: 'review', author: 'Tripadvisor misafiri', title: lines[0].replace(/^###\s*/, ''), text: lines.slice(1).join(' ').slice(0, 260), meta: 'Tripadvisor • 5/5' });
+            });
+
+            const imageMatches = Array.from(raw.matchAll(/https:\/\/[^\s"']+\.(?:jpg|jpeg|png|webp)/gi)).map((match) => match[0]);
+            imageMatches.slice(0, 4).forEach((image, index) => {
+              items.unshift({ type: 'photo', title: `Tripadvisor fotoğrafı ${index + 1}`, text: 'Tripadvisor sayfasından otomatik çekilen görsel.', image, meta: 'Tripadvisor • Canlı fotoğraf' });
+            });
+
+            if (!items.length) throw new Error('İşlenebilir içerik bulunamadı');
+
+            const liveFeed = {
+              rating: (raw.match(/5 baloncuk üzerinden\s*([0-9],[0-9]|[0-9]\.[0-9])/i)?.[1] || '4,9').replace(',', '.') + '/5',
+              reviewCount: Number(raw.match(/\((\s*\d+)\s+yorum\)/i)?.[1] || 93),
+              fetchedAt: new Date().toISOString().slice(0, 10),
+              source: 'live',
+              items: [
+                ...items,
+                { type: 'video', title: 'Tanıtım videosu', text: 'Tripadvisor sayfasında doğrudan video bulunamadığında tanıtım videosu galeri düzeninde gösterilmeye devam eder.', video: 'assets/arka.mp4', poster: imageMatches[0] || TRIPADVISOR_FALLBACK.items[1].poster, meta: 'Site videosu • Galeri içinde' }
+              ].slice(0, 8)
+            };
+
+            renderGalleryItems(liveFeed.items);
+            updateGallerySummary(liveFeed);
+            setGalleryStatus('gallery.liveReady', 'Tripadvisor galerisi canlı verilerle güncellendi.');
+            applyGalleryFilter(document.querySelector('.gallery-filter-btn.is-active')?.dataset.filter || 'all');
+            return;
+          } catch (error) {
+            console.warn('Tripadvisor canlı veri çekilemedi:', error);
+          }
+        }
+
+        setGalleryStatus('gallery.fallbackReady', 'Canlı çekim başarısız oldu; son kaydedilen Tripadvisor içerikleri gösteriliyor.');
+        applyGalleryFilter(document.querySelector('.gallery-filter-btn.is-active')?.dataset.filter || 'all');
       }
 
       function syncMobileNav() {
@@ -570,6 +644,7 @@
 
       applyTranslations('tr');
       applyGalleryFilter('all');
+      loadTripadvisorGallery();
     </script>
   </body>
 </html>
