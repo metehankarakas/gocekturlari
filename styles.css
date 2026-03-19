@@ -291,85 +291,63 @@ h1, h2 { font-family: 'Playfair Display', serif; }
 
 .split-heading { display: flex; justify-content: space-between; gap: 1rem; align-items: end; }
 .gallery-actions { display: flex; gap: 0.75rem; flex-wrap: wrap; justify-content: flex-end; }
-.gallery-grid {
-  display: grid;
-  grid-template-columns: 1.2fr 1fr 1fr;
-  gap: 1rem;
-}
-.gallery-card {
-  min-height: 340px;
-  border-radius: 30px;
-  overflow: hidden;
-  position: relative;
-  box-shadow: var(--shadow);
-  background-size: cover;
-  background-position: center;
-}
-.gallery-card::after {
-  content: '';
-  position: absolute; inset: 0;
-  background: linear-gradient(180deg, rgba(7,17,27,0.08), rgba(7,17,27,0.7));
-}
-.gallery-copy {
-  position: absolute;
-  left: 1.35rem; right: 1.35rem; bottom: 1.35rem;
-  z-index: 1;
-  color: white;
-}
-.gallery-copy strong { display: block; margin-bottom: 0.45rem; font-size: 1.15rem; }
-.gallery-copy span { color: rgba(255,255,255,0.8); }
 .scenic-a { background-image: url('https://images.unsplash.com/photo-1500375592092-40eb2168fd21?auto=format&fit=crop&w=1200&q=80'); }
 .scenic-b { background-image: url('https://images.unsplash.com/photo-1505118380757-91f5f5632de0?auto=format&fit=crop&w=1200&q=80'); }
-.scenic-c { background-image: url('https://images.unsplash.com/photo-1493558103817-58b2924bce98?auto=format&fit=crop&w=1200&q=80'); }
-
-.instagram-panel {
+.review-summary {
   display: grid;
-  grid-template-columns: minmax(0, 1.2fr) minmax(280px, 0.8fr);
+  grid-template-columns: minmax(0, 1.3fr) minmax(260px, 0.7fr);
   gap: 1.25rem;
-  padding: 1.4rem;
+  padding: 1.5rem;
   border-radius: 30px;
   margin-bottom: 1.25rem;
 }
-.instagram-panel h3 { margin: 0.4rem 0 0.75rem; font-size: 1.5rem; }
-.instagram-panel p { margin-bottom: 0; color: var(--muted); line-height: 1.75; }
-.instagram-steps {
-  margin: 0;
-  padding-left: 1.2rem;
-  color: var(--text);
-  display: grid;
-  gap: 0.75rem;
+.review-summary h3 { margin: 0.4rem 0 0.75rem; font-size: 1.5rem; }
+.review-summary p { margin-bottom: 0; color: var(--muted); line-height: 1.75; }
+.review-score-stack { display: grid; gap: 1rem; }
+.review-score-card {
+  padding: 1.2rem;
+  border-radius: 24px;
+  background: rgba(12,122,191,0.08);
+  border: 1px solid rgba(16, 40, 59, 0.08);
 }
-.instagram-steps li { line-height: 1.65; }
-.instagram-status {
-  min-height: 1.5rem;
-  margin-bottom: 1rem;
-  color: var(--muted);
-  font-weight: 600;
+.review-score-card strong {
+  display: block;
+  font-size: 1.6rem;
+  margin-bottom: 0.45rem;
+  color: var(--primary-deep);
 }
-.instagram-grid {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 1rem;
+.review-score-card span { color: var(--muted); line-height: 1.6; }
+.gallery-filter { display: flex; gap: 0.75rem; flex-wrap: wrap; margin-bottom: 1.25rem; }
+.gallery-filter-btn {
+  border: 1px solid rgba(16, 40, 59, 0.1);
+  background: rgba(255,255,255,0.75);
+  color: var(--primary-deep);
+  border-radius: 999px;
+  padding: 0.8rem 1rem;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
 }
-.instagram-card {
+.gallery-filter-btn.is-active { background: linear-gradient(135deg, var(--primary-deep), var(--primary)); color: white; }
+.tripadvisor-gallery { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; }
+.ta-card {
   overflow: hidden;
   border-radius: 28px;
   background: rgba(255,255,255,0.88);
   border: 1px solid rgba(16, 40, 59, 0.08);
   box-shadow: var(--shadow);
 }
-.instagram-media-wrap {
+.ta-card[hidden] { display: none; }
+.ta-media {
   position: relative;
-  aspect-ratio: 4 / 4.3;
-  overflow: hidden;
-  background: linear-gradient(135deg, rgba(12,122,191,0.18), rgba(213,164,76,0.18));
+  aspect-ratio: 4 / 3.3;
+  background-size: cover;
+  background-position: center;
+  background-color: #dceaf5;
 }
-.instagram-media {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-.instagram-badge {
+.ta-video { overflow: hidden; background: #06111d; }
+.ta-video video { width: 100%; height: 100%; display: block; object-fit: cover; }
+.ta-badge {
   position: absolute;
   top: 1rem;
   left: 1rem;
@@ -382,26 +360,29 @@ h1, h2 { font-family: 'Playfair Display', serif; }
   letter-spacing: 0.08em;
   text-transform: uppercase;
 }
-.instagram-content {
+.ta-content { display: grid; gap: 0.75rem; padding: 1.2rem; }
+.ta-content.compact { padding-top: 0; }
+.ta-content h3, .ta-card-review h3 { margin: 0; font-size: 1.2rem; }
+.ta-content p, .ta-card-review p { margin: 0; color: var(--muted); line-height: 1.7; }
+.ta-meta { font-size: 0.82rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--primary); }
+.ta-card-review { padding: 1.2rem; display: grid; gap: 1rem; }
+.ta-review-head { display: flex; justify-content: space-between; gap: 1rem; align-items: start; }
+.ta-review-head strong { display: block; margin-bottom: 0.35rem; }
+.ta-stars { color: #12b886; font-size: 1.1rem; letter-spacing: 0.08em; }
+.ta-quote-block {
+  min-height: 220px;
   display: grid;
-  gap: 0.9rem;
-  padding: 1.2rem;
+  align-content: end;
+  gap: 1rem;
+  padding: 1.4rem;
+  color: white;
+  background: linear-gradient(135deg, #10304b, #0d2235);
 }
-.instagram-content p {
-  margin: 0;
-  color: var(--muted);
-  line-height: 1.65;
-  display: -webkit-box;
-  -webkit-line-clamp: 3;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-}
-.instagram-content a {
-  font-weight: 800;
-  color: var(--primary-deep);
-}
+.ta-quote-block p { font-size: 1.35rem; line-height: 1.5; color: white; }
+.ta-quote-block span { color: rgba(255,255,255,0.7); text-transform: uppercase; letter-spacing: 0.12em; font-size: 0.8rem; }
 
 .faq-grid { grid-template-columns: repeat(2, minmax(0,1fr)); }
+
 .faq-item { padding: 1.5rem; }
 
 .site-footer {
@@ -528,7 +509,7 @@ h1, h2 { font-family: 'Playfair Display', serif; }
 }
 
 @media (max-width: 1080px) {
-  .hero-grid, .split-section, .route-grid, .gallery-grid, .metrics-grid, .tour-grid, .faq-grid, .footer-grid, .instagram-grid, .instagram-panel {
+  .hero-grid, .split-section, .route-grid, .metrics-grid, .tour-grid, .faq-grid, .footer-grid, .tripadvisor-gallery, .review-summary {
     grid-template-columns: 1fr;
   }
 
@@ -640,9 +621,6 @@ h1, h2 { font-family: 'Playfair Display', serif; }
     width: 46px;
     height: 46px;
     border-radius: 16px;
-  }
-  .gallery-card {
-    min-height: 260px;
   }
   .footer-shell {
     padding: 1.25rem 0 1rem;
