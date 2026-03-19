@@ -38,31 +38,47 @@
         <div class="hero-overlay"></div>
 
         <nav class="nav container glass">
-          <a class="brand" href="#top" aria-label="Grand Azure home">
-            <img src="assets/logo.png" alt="Grand Azure logo" class="brand-logo" />
-            <div>
-              <strong>GRAND AZURE</strong>
-              <span>Göcek Boat Experience</span>
-            </div>
-          </a>
+          <div class="nav-main-row">
+            <a class="brand" href="#top" aria-label="Grand Azure home">
+              <img src="assets/logo.png" alt="Grand Azure logo" class="brand-logo" />
+              <div>
+                <strong>GRAND AZURE</strong>
+                <span>Göcek Boat Experience</span>
+              </div>
+            </a>
 
-          <div class="nav-links">
-            <a href="#experience" data-i18n="nav.experience">Deneyim</a>
-            <a href="#tours" data-i18n="nav.tours">Turlar</a>
-            <a href="#route" data-i18n="nav.route">Rota</a>
-            <a href="#gallery" data-i18n="nav.gallery">Galeri</a>
-            <a href="#faq" data-i18n="nav.faq">SSS</a>
-            <a href="#booking" data-i18n="nav.booking">Rezervasyon</a>
+            <button
+              class="nav-toggle"
+              type="button"
+              aria-expanded="false"
+              aria-controls="primary-navigation"
+              aria-label="Menüyü aç veya kapat"
+            >
+              <span></span>
+              <span></span>
+              <span></span>
+            </button>
           </div>
 
-          <div class="nav-side">
-            <div class="language-switcher" aria-label="Language selector">
-              <button class="lang-btn is-active" data-lang="tr">TR</button>
-              <button class="lang-btn" data-lang="en">EN</button>
-              <button class="lang-btn" data-lang="de">DE</button>
-              <button class="lang-btn" data-lang="ru">RU</button>
+          <div class="nav-panel" id="primary-navigation">
+            <div class="nav-links">
+              <a href="#experience" data-i18n="nav.experience">Deneyim</a>
+              <a href="#tours" data-i18n="nav.tours">Turlar</a>
+              <a href="#route" data-i18n="nav.route">Rota</a>
+              <a href="#gallery" data-i18n="nav.gallery">Galeri</a>
+              <a href="#faq" data-i18n="nav.faq">SSS</a>
+              <a href="#booking" data-i18n="nav.booking">Rezervasyon</a>
             </div>
-            <a class="button button-primary nav-cta" href="#booking" data-i18n="hero.ctaPrimary">Teklif Alın</a>
+
+            <div class="nav-side">
+              <div class="language-switcher" aria-label="Language selector">
+                <button class="lang-btn is-active" data-lang="tr">TR</button>
+                <button class="lang-btn" data-lang="en">EN</button>
+                <button class="lang-btn" data-lang="de">DE</button>
+                <button class="lang-btn" data-lang="ru">RU</button>
+              </div>
+              <a class="button button-primary nav-cta" href="#booking" data-i18n="hero.ctaPrimary">Teklif Alın</a>
+            </div>
           </div>
         </nav>
 
@@ -340,6 +356,9 @@
       const tourType = document.getElementById('tourType');
       const langButtons = document.querySelectorAll('.lang-btn');
       const metaDescription = document.querySelector('meta[name="description"]');
+      const navToggle = document.querySelector('.nav-toggle');
+      const navPanel = document.querySelector('.nav-panel');
+      const navAnchors = document.querySelectorAll('.nav-links a, .nav-cta');
       let currentLang = 'tr';
 
       function getValue(obj, path) {
@@ -380,9 +399,33 @@
         });
 
         populateTourOptions(lang);
-        langButtons.forEach((button) => {
-          button.classList.toggle('is-active', button.dataset.lang === lang);
+      }
+
+      function syncMobileNav() {
+        if (!navToggle || !navPanel) return;
+        if (window.innerWidth > 720) {
+          navPanel.classList.remove('is-open');
+          navToggle.setAttribute('aria-expanded', 'false');
+        }
+      }
+
+      if (navToggle && navPanel) {
+        navToggle.addEventListener('click', () => {
+          const isOpen = navPanel.classList.toggle('is-open');
+          navToggle.setAttribute('aria-expanded', String(isOpen));
         });
+
+        navAnchors.forEach((anchor) => {
+          anchor.addEventListener('click', () => {
+            if (window.innerWidth <= 720) {
+              navPanel.classList.remove('is-open');
+              navToggle.setAttribute('aria-expanded', 'false');
+            }
+          });
+        });
+
+        window.addEventListener('resize', syncMobileNav);
+        syncMobileNav();
       }
 
       langButtons.forEach((button) => {
