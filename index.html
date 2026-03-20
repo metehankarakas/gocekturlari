@@ -184,7 +184,7 @@
         <section class="section container" id="tours">
           <div class="section-heading">
             <p class="eyebrow dark" data-i18n="tours.eyebrow">Tur seçenekleri</p>
-            <h2 data-i18n="tours.title">Her misafir tipi için rafine edilmiş planlar</h2>
+            <h2 data-i18n="tours.title">Her misafir için düzenlenmiş planlar</h2>
           </div>
           <div class="tour-grid">
             <article class="tour-card featured">
@@ -236,49 +236,40 @@
           </div>
         </section>
 
-        <section class="section container" id="gallery">
-          <div class="section-heading split-heading">
-            <div>
-              <p class="eyebrow dark" data-i18n="gallery.eyebrow">Tripadvisor galeri</p>
-              <h2 data-i18n="gallery.title">Fotoğraf, video ve misafir yorumlarını tek bir galeride gösterin</h2>
-            </div>
-            <div class="gallery-actions">
-              <a class="button button-secondary" href="https://www.tripadvisor.com/" target="_blank" rel="noopener noreferrer" data-i18n="gallery.cta">Tripadvisor sayfasını aç</a>
-            </div>
-          </div>
+<!-- ░░░ GALLERY SECTION ░░░ -->
+<section id="gallery" style="padding: 80px 0; background: #f8f7f4;">
+  <div style="max-width: 1100px; margin: 0 auto; padding: 0 24px;">
 
-          <div class="review-summary glass-strong">
-            <div>
-              <p class="card-tag" data-i18n="gallery.summaryTag">Sosyal kanıt</p>
-              <h3 data-i18n="gallery.summaryTitle">Tripadvisor içeriğini otomatik galeriye dönüştürün</h3>
-              <p data-i18n="gallery.summaryText">Bu bölüm verilen Tripadvisor adresini okuyup fotoğraf, video ve yorumları kart yapısında otomatik göstermeyi dener; canlı çekim başarısız olursa kaydedilmiş son veriler gösterilir.</p>
-            </div>
-            <div class="review-score-stack">
-              <div class="review-score-card">
-                <strong id="tripadvisor-rating">4.9/5</strong>
-                <span data-i18n="gallery.scoreLabel">Güncel puan özeti</span>
-              </div>
-              <div class="review-score-card">
-                <strong id="tripadvisor-count">93 yorum</strong>
-                <span data-i18n="gallery.mediaLabel">Fotoğraf, video ve yorum tek galeride</span>
-              </div>
-            </div>
-          </div>
+    <div style="text-align: center; margin-bottom: 48px;">
+      <p style="font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: #888; margin: 0 0 10px;">Galeri</p>
+      <h2 style="font-size: clamp(1.6rem, 3vw, 2.2rem); font-weight: 600; color: #1a1a1a; margin: 0;">Anlarımızdan Kareler</h2>
+    </div>
 
-          <div class="gallery-meta-row">
-            <div class="gallery-status" id="gallery-status" data-i18n="gallery.loading">Tripadvisor galerisi yükleniyor...</div>
-            <div class="gallery-last-updated" id="gallery-last-updated"></div>
-          </div>
+    <!-- Ana ızgara: büyük sol + 4 küçük sağ -->
+    <div id="ga-top" style="display: grid; grid-template-columns: 2fr 1fr; gap: 10px; margin-bottom: 10px;"></div>
 
-          <div class="gallery-filter" role="tablist" aria-label="Galeri filtreleri">
-            <button class="gallery-filter-btn is-active" type="button" data-filter="all" data-i18n="gallery.filterAll">Tümü</button>
-            <button class="gallery-filter-btn" type="button" data-filter="photo" data-i18n="gallery.filterPhoto">Fotoğraflar</button>
-            <button class="gallery-filter-btn" type="button" data-filter="video" data-i18n="gallery.filterVideo">Videolar</button>
-            <button class="gallery-filter-btn" type="button" data-filter="review" data-i18n="gallery.filterReview">Yorumlar</button>
-          </div>
+    <!-- Alt sıra: 4 eşit kare -->
+    <div id="ga-bottom" style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px;"></div>
 
-          <div class="tripadvisor-gallery" id="tripadvisor-gallery"></div>
-        </section>
+    <div style="text-align: center; margin-top: 40px;">
+      <a href="https://www.instagram.com/gocekgrandazure/" target="_blank" rel="noopener"
+         style="display: inline-block; padding: 13px 32px; border: 1.5px solid #C8860A; color: #C8860A; border-radius: 8px; font-size: 14px; font-weight: 500; text-decoration: none; letter-spacing: 0.04em; transition: background 0.2s, color 0.2s;"
+         onmouseover="this.style.background='#C8860A';this.style.color='#fff';"
+         onmouseout="this.style.background='transparent';this.style.color='#C8860A';">
+        Instagram'da Takip Et
+      </a>
+    </div>
+
+  </div>
+</section>
+
+<!-- Lightbox overlay -->
+<div id="ga-lightbox" style="display:none; position:fixed; inset:0; background:rgba(0,0,0,0.88); z-index:9999; align-items:center; justify-content:center;" onclick="gaCloseLightbox()">
+  <button onclick="gaNav(-1);event.stopPropagation();" style="position:absolute; left:20px; top:50%; transform:translateY(-50%); background:rgba(255,255,255,0.15); border:none; color:#fff; font-size:28px; width:48px; height:48px; border-radius:50%; cursor:pointer; line-height:1;">&#8249;</button>
+  <img id="ga-lightbox-img" src="" alt="" style="max-width:90vw; max-height:88vh; border-radius:8px; object-fit:contain;" onclick="event.stopPropagation()">
+  <button onclick="gaNav(1);event.stopPropagation();" style="position:absolute; right:20px; top:50%; transform:translateY(-50%); background:rgba(255,255,255,0.15); border:none; color:#fff; font-size:28px; width:48px; height:48px; border-radius:50%; cursor:pointer; line-height:1;">&#8250;</button>
+  <button onclick="gaCloseLightbox()" style="position:absolute; top:16px; right:20px; background:rgba(255,255,255,0.15); border:none; color:#fff; font-size:20px; width:40px; height:40px; border-radius:50%; cursor:pointer; line-height:1;">&#215;</button>
+</div>
 
         <section class="section container faq-section" id="faq">
           <div class="section-heading narrow">
